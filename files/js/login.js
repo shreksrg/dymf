@@ -44,7 +44,9 @@ function submitModifyPwd() {
     });
 }
 
-
+/**
+ * 学员注册
+ */
 function submitRegister() {
     // $('#frmRegister').form('submit');
     $('#frmRegister').form('submit', {
@@ -54,7 +56,6 @@ function submitRegister() {
             if (r == 1) {
                 msg = '注册成功';
                 $('#winLogin').window('close')
-
             } else {
                 msg = '用户名已经存在';
             }
@@ -185,7 +186,6 @@ function userLogout(obj) {
 
 
 function getUserInfo(obj) {
-
     var win = $('#winLogin').clone(true);
 
     win.window({

@@ -2,6 +2,13 @@
 
 class model_learnOrganization extends model_base
 {
+    private $pdo;
+
+    public function __construct()
+    {
+        $this->pdo = self::DB();
+    }
+
     //检查是否存在当月学修日志
     public function inspectLogExists($date)
     {
@@ -15,14 +22,13 @@ class model_learnOrganization extends model_base
     }
 
 
-
-    // 增加学习日志
-    public function addLearnLogs(Array $dataOrg, Array $dataLogs)
+    // 增加学修日志
+    public function addLearnLogs(Array $dataOrg, Array $dataStats)
     {
-        // $dataOrg = array('stuid' => 1, 'classid' => 1, 'squadid' => 1, 'learn_date' => 123456);
-        //$dataLog = array('orgid' => 0, 'courseid' => 2, 'monthcount' => 2, 'sumcount' => 20);
-        $strQuery1 = "insert into dymf_organization (stuid,classid,squadid,learn_date) values (:stuid,:classid,:squadid,:learn_date)";
-        $strQuery2 = "insert into dymf_learnlogs (orgid,cstatcode,monthcount,sumcount) values (:orgid,:cstatcode,:monthcount,:sumcount)";
+        $strQuery1 = "insert into dymf_organization (stuid,clscode,squadid,learn_date)
+        values (:stuid,:clscode,:squadid,:learn_date)";
+        $strQuery2 = "insert into dymf_learnstatlogs (orgid,cstatcode,monthcount,sumcount)
+        values (:orgid,:cstatcode,:monthcount,:sumcount)";
         $pdo = self::DB();
         $pdoStatement1 = $pdo->prepare($strQuery1);
         $pdoStatement2 = $pdo->prepare($strQuery2);
@@ -30,14 +36,28 @@ class model_learnOrganization extends model_base
             $pdo->beginTransaction();
             $pdoStatement1->execute($dataOrg);
             $orgId = $pdo->lastInsertId();
-            foreach ($dataLogs as $log) {
-                $log['orgid'] = $orgId;
-                $pdoStatement2->execute($log);
+            foreach ($dataStats as $stat) {
+                $stat['orgid'] = $orgId;
+                $pdoStatement2->execute($stat);
             }
             $pdo->commit();
+            return true;
         } catch (Exception $e) {
             $pdo->rollBack();
-            echo $e->getMessage();
+            return $e->getMessage();
         }
+    }
+
+    // 获取指定学修班累计数记录
+    public function getClassStatsForSum($stuid, $clscode)
+    {
+        $strQuery = "SELECT clscode,cstatcode,SUM(monthcount) AS sumcount,MIN(learn_date) AS fromdate,MAX(learn_date) AS todate
+        FROM dymf_organization AS org LEFT JOIN dymf_learnstatlogs AS stat ON org.id=stat.orgid
+        WHERE org.stuid=:stuid and org.clscode=:clscode  GROUP BY clscode,cstatcode";
+
+        $pdo = self::DB();
+        $pdoStatement = $pdo->prepare($strQuery);
+        $pdoStatement->execute(array('stuid' => $stuid, 'clscode' => $clscode));
+        return $rows = $pdoStatement->fetchAll();
     }
 }

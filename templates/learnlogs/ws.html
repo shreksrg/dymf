@@ -1,11 +1,16 @@
+<script>
+
+
+</script>
+
 <form id="frmLearner" action="/?c=LearnLogs&st=SubmitLearnLogs" method="post">
     <div class="pc-right">
         <ul>
             <li>
-                <h2>戒律自查</h2>
+                <h2>戒律自查 - {$rows}</h2>
 
                 <p cscode='ws001'>
-                    <label for="">本月数</label><input name='mc' citem='mc' type="text" class="easyui-validatebox" maxlength="20"
+                    <label for="">本月数</label><input citem='mc' type="text" class="easyui-validatebox" maxlength="20"
                                                     data-options="required:true,validType:'length[1,20]'"/>
                     <label for="">累计数</label><input citem='sc' type=""/>
                 </p>
@@ -15,8 +20,8 @@
 
                 <p cscode='ws002'>
                     <b>每日闻法</b>
-                    <label for="">本月数</label><input citem='mc' type=""/>
-                    <label for="">累计数</label><input citem='sc' type=""/>
+                    <label for="">本月数</label><input citem='mc' type="" value="34"/>
+                    <label for="">累计数</label><input citem='sc' type="" value="0"/>
                 </p>
 
                 <p cscode='ws003'>

@@ -82,8 +82,9 @@ class Act_Test extends Ctrl_Components_Controller
             echo 0;
     }
 
-    private function addLogs()
+    public function actionStatSum()
     {
+        $model = new model_learnOrganization();
 
     }
 }

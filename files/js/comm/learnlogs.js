@@ -38,9 +38,24 @@ function submitCountForm() {
 
     if (isValid) {
         $.post(url, setSubmitData(), function (r) {
-            console.log(r);
+            $.messager.alert('提示', r['content'])
         }, 'json')
     }
+}
+
+/**
+ * 获取指定学修班统计项累计数记录
+ * @return Array 统计项数组
+ */
+function getClassStatsForSum() {
+    var url = '/?c=learnlogs&st=ClassStatsForSum';
+    $.post(url, {'clscode': 'ws'}, function (rows) {
+        for (var i in rows) {
+            $('[cscode=' + rows[i]['cstatcode'] + '] input[citem=sc]').numberbox('setValue', rows[i]['sumcount']);
+
+
+        }
+    }, 'json')
 }
 
 
@@ -50,16 +65,8 @@ $('p[cscode] input').numberbox({
     max: 1000
 })
 
+getClassStatsForSum();
 
-/*
- $('#frmLearner').form({
- onSubmit: function (param) {
- $('input[name=yii]').val(setSubmitData());
- },
- success: function (r) {
- console.log(r);
- }
- }
- )*/
+
 
 

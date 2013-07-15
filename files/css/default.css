@@ -1,0 +1,358 @@
+/* class style */
+.body {
+    margin: 0 auto;
+    width: 1300px;
+
+}
+
+.body_back {
+    margin: 0 auto;
+    width: 997px;
+    background-color: #024162;
+    border-left: 5px #024162 solid;
+    border-right: 5px #024162 solid;
+    background-color: #fff;
+}
+
+.banner_no1 {
+    /*width: 996px;*/
+    height: 44px;
+    background-image: url(../images/academy/row_bg.gif);
+    margin: 0 auto;
+    border: #559bbf 1px solid;
+    color: #592912;
+    font-size: 14px;
+    font-weight: bolder;
+    overflow: hidden;
+
+}
+
+.banner_no1 a {
+    color: #592912;
+    text-decoration: none;
+}
+
+.banner_no1 div {
+    /* text-align: right;*/
+   // margin-right: 20px;
+    color: #FFF;
+    font-weight: normal;
+}
+
+.banner_no1 div a {
+    color: #FFF;
+    text-decoration: none;
+}
+
+.banner_no2 {
+    color: #fff;
+}
+
+.top_route {
+    height: 40px;
+    line-height: 40px;
+    font-size: 14px;
+    margin-left: 20px;
+}
+
+.top_route a {
+    color: #000;
+    text-decoration: none;
+}
+
+.left_top {
+    background-image: url(../images/article_r2_c2.jpg);
+    height: 48px;
+    /*width: 574px;*/
+    color: #FFF;
+    font-size: 14px;
+    line-height: 48px;
+    padding-left: 10px;
+    font-size: 12px;
+}
+
+.left_top a {
+    color: #FFF;
+    text-decoration: none;
+}
+
+/* id style */
+
+/**
+ *  modified by jermyn
+ *  date: 5/28/2013
+ */
+
+.body-bg {
+    background: url("../images/fw_r2_c3.jpg");
+}
+
+#header {
+    background: url(../images/academy/banner.jpg);
+    margin: 0 auto;
+    width: 1007px;
+    height: 231px;
+}
+
+.index_top1_inner {
+    /* height: 200px;*/
+    position: relative;
+}
+
+.index_top1_inner .title_left {
+    position: absolute;
+    font-size: 18px;
+    font-weight: bold;
+    color: yellow;
+    left: 156px;
+    top: 20px;
+}
+
+.index_top1_inner .title_right {
+    position: absolute;
+    font-size: 21px;
+    font-weight: bold;
+    color: darkred;
+    right: 276px;
+    top: 50px;
+}
+
+.menu_list {
+    position: absolute;
+    left: 132px;
+    top: 80px;
+}
+
+.menu_list ul li {
+    display: block;
+    width: 188px;
+    height: 46px;
+    cursor: pointer;
+    margin-bottom: 16px;
+    background: url("../images/academy/menu.gif") no-repeat 0px 0px;
+
+    line-height: 46px;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 14px;
+    /* padding-left: 4.5em;*/
+
+}
+
+.menu_list ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    margin-left: 4.5em;
+}
+
+.famous_saying {
+    position: absolute;
+    top: 102px;
+    right: 48px;
+    width: 520px;
+    height: 178px;
+    font-size: 14px;
+    line-height: 32px;
+}
+
+.next_saying {
+    position: absolute;
+    display: block;
+    background: url("../images/academy/icon_1.jpg") no-repeat 0 0;
+    top: 306px;
+    right: 56px;
+
+    height: 32px;
+    line-height: 24px;
+    padding-left: 1.5em;
+    color: #a07954;
+
+}
+
+.banner_no1 b.bno1 {
+    background: url("../images/academy/icon_row.gif") no-repeat;
+    font-size: 16px;
+    font-weight: bold;
+    padding-left: 1.5em;
+    color: #ffffff;
+    line-height: 44px;
+    margin-left: 1em;
+}
+
+.row_caption_l2 {
+    height: 44px;
+
+}
+
+.row_caption_l2 b.bt1 {
+    display: block;
+    float: left;
+    background-position: 0 14px;
+    width: 446px;
+    line-height: 44px;
+    text-align: left;
+}
+
+.index_top2_cl {
+    position: relative;
+    left: 32px;
+    top: 12px;
+    float: left;
+}
+
+.index_top2_cl ul li {
+    height: 24px;
+    line-height: 24px;
+    width: 450px;
+    font-size: 14px;
+}
+
+.index_top2_cr {
+    position: relative;
+    left: 72px;
+    top: 12px;
+    float: left;
+}
+
+.index_top2_cr ul li {
+    height: 24px;
+    line-height: 24px;
+    width: 450px;
+    font-size: 14px;
+}
+
+a.index_top4_bno {
+    display: block;
+    background: url("../images/academy/menu.jpg") no-repeat 0 -74px;
+    font-size: 13px;
+    font-weight: bold;
+    height: 32px;
+    color: #ffffff;
+    line-height: 32px;
+    text-align: center;
+    width: 196px;
+
+}
+
+#jt_content1 ul li a, #jt_content2 ul li a {
+    background: url(../images/academy/icon_1.jpg) no-repeat 0 -282px;
+    padding-left: 21px;
+}
+
+.bweight_s1 {
+    font-size: 14px;
+    line-height: 32px;
+
+}
+
+.issues_l2, .issues_l3 {
+    line-height: 24px;
+    color: #a17960;
+    font-size: 14px;
+    background: url(../images/academy/icon_2.gif) no-repeat 0 2px;
+    padding-left: 21px;
+}
+
+.issues_l3 {
+
+    color: darkred;
+
+}
+
+.issue_more {
+    line-height: 42px;
+    color: gray;
+    font-weight: bold;
+}
+
+.index_ask_body ul {
+    margin-left: 8px;
+
+}
+
+.index_ask_body ul li {
+    line-height: 24px;
+    font-size: 14px;
+}
+
+.ask_caption {
+    font-size: 13px;
+    text-align: left;
+    font-weight: bold;
+}
+
+.index_cls_title {
+    display: block;
+    height: 42px;
+    line-height: 38px;
+    text-align: center;
+    font-weight: normal;
+    font-weight: bold;
+}
+
+.index_my3_desc {
+    width: 88%;
+    margin: 0 auto;
+    line-height: 21px;
+    color: #640200;
+}
+
+.index_ph_caption {
+    height: 24px;
+    line-height: 24px;
+    padding-left: 8px;
+    font-weight: bold;
+}
+
+.split_line1 {
+    border-top: 1px dashed #CCCCCC;
+    height: 12px;
+}
+
+.download_i2, .play_icon_2, .content_icon_2 {
+    background: url(../images/academy/icon_1.jpg) no-repeat 0 -165px;
+    width: 32px;
+    height: 32px;
+    display: block;
+    margin: 0 auto;
+}
+
+.play_icon_2 {
+    background-position: 0 -31px;
+}
+
+.content_icon_2 {
+    width: 90%;
+    background-position: 0 -352px;
+    text-align: left;
+    padding-left: 26px;
+    line-height: 32px;
+}
+
+#table_items td {
+    font-size: 14px;
+}
+
+.footer1 {
+    color: #ffffff;
+    line-height: 44px;
+    font-size: 12px;
+    text-align: center;
+}
+
+.footer1 a {
+    color: #ffffff;
+}
+
+.bread_path_1 {
+    line-height: 46px;
+    text-align: left;
+    padding-left: 1em;
+    font-size: 12px;
+}
+
+.col_bno1_center{
+    width:120px;
+    height:16px;
+    margin:0 auto
+}

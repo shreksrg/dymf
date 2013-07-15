@@ -1,0 +1,95 @@
+{include file="public/page_head.html"}
+<link href="../../files/admin/css/main.css" rel="stylesheet" type="text/css" />
+<link href="../../files/css/part.css" rel="stylesheet" type="text/css" />
+{if $msg neq ""}
+<script>
+	alert("{$msg}");
+	window.location.href="?act=group&st=showHTML";
+</script>
+{/if}
+<div class='body'>
+  <div class="body_back">
+    <div class="banner_no1" style="text-align:right;">
+      <div class="bread_path_1">首页 -> <a href="./">{$webname}</a> -> 成就之路</div>
+    </div>
+
+    <div id="g_con_body">
+      <h1>加入实修小组申请</h1>
+      <div class="show">* 以下内容为必填项</div>
+      <form method="post" action="?act=group&st=add_group_info" id="websit_config">
+      <table id="g_con_body_table" width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td width="30%" align="right"><span>*</span> 姓名：</td>
+          <td align="left"><input name="getname" class="easyui-validatebox input_wb input" {if $ss_id neq ''} disabled="disabled"{/if} id="getname" value="{$info.userfullname}" data-options="required:true,validType:'length[1,20]'" /></td>
+        </tr>
+        <tr>
+          <td width="30%" align="right"><span>*</span> 性别：</td>
+          <td align="left">男：
+            <input name="getman" type="radio" value="1" {if $info.getman eq 1||$ss_id eq ''}checked="checked"{/if}  {if $ss_id neq ''} disabled="disabled"{/if} />
+            女：
+            <input name="getman" type="radio" value="0"  {if $info.getman eq 0}checked="checked"{/if} {if $ss_id neq ''} disabled="disabled"{/if} /></td>
+        </tr>
+        <tr>
+          <td width="30%" align="right"><span>*</span> 出生年月：</td>
+          <td align="left"><input name="getbirthday" required="required" class="easyui-datebox" id="getbirthday" value="{$nowdate}" editable="0"  {if $ss_id neq ''} disabled="disabled"{/if} /></td>
+        </tr>
+        <tr>
+          <td width="30%" align="right"><span>*</span> 职业：</td>
+          <td align="left"><input name="getprofession" class="easyui-validatebox input_wb input" id="getprofession" value="{$info.getprofession}" data-options="required:true,validType:'length[1,20]'"  {if $ss_id neq ''} disabled="disabled"{/if} /></td>
+        </tr>
+        <tr>
+          <td width="30%" align="right">何时依止上师：</td>
+          <td align="left"><input name="getwhen" class="easyui-validatebox input_wb input" id="getwhen" value="{$info.getwhen}" data-options="required:true,validType:'length[1,20]'"  {if $ss_id neq ''} disabled="disabled"{/if} />
+            （暂未皈依可不填）</td>
+        </tr>
+        <tr>
+          <td width="30%" align="right">法名：</td>
+          <td align="left"><input name="getfaming" class="easyui-validatebox input_wb input" id="getfaming" value="{$info.getfaming}" data-options="required:true,validType:'length[1,20]'"  {if $ss_id neq ''} disabled="disabled"{/if} /></td>
+        </tr>
+        <tr>
+          <td width="30%" align="right"><span>*</span> 联系电话1：</td>
+          <td align="left"><input name="gettel1" class="easyui-validatebox input_wb input" id="getwhen" value="{$info.gettel1}" data-options="required:true,validType:'length[1,20]'"  {if $ss_id neq ''} disabled="disabled"{/if} /></td>
+        </tr>
+        <tr>
+          <td width="30%" align="right">联系电话2：</td>
+          <td align="left"><input name="gettle2" class="easyui-validatebox input_wb input" id="getwhen" value="{$info.gettle2}" data-options="required:true,validType:'length[1,20]'"  {if $ss_id neq ''} disabled="disabled"{/if} />
+            （至少填一个联系电话）</td>
+        </tr>
+        <tr>
+          <td width="30%" align="right">QQ：</td>
+          <td align="left"><input name="getqq" class="easyui-validatebox input_wb input" id="getwhen" value="{$info.getqq}" data-options="required:true,validType:'length[1,20]'"  {if $ss_id neq ''} disabled="disabled"{/if} /></td>
+        </tr>
+        <tr>
+          <td width="30%" align="right">E-mail：</td>
+          <td align="left"><input name="getmail" class="easyui-validatebox input_wb input" id="getwhen" value="{$info.getmail}" data-options="required:true,validType:'length[1,20]'"  {if $ss_id neq ''} disabled="disabled"{/if} /></td>
+        </tr>
+        <tr>
+          <td width="30%" align="right"><span>*</span> 您申请加入何地实修小组：</td>
+          <td align="left"></td>
+        </tr>
+        <tr>
+          <td width="30%" align="right">省：</td>
+          <td align="left"><input name="joinsheng" class="easyui-validatebox input_wb input" id="getwhen" value="{$info.joinsheng}" data-options="required:true,validType:'length[1,20]'"  {if $ss_id neq ''} disabled="disabled"{/if} /></td>
+        </tr>
+        <tr>
+          <td width="30%" align="right">市：</td>
+          <td align="left"><input name="joinshi" class="easyui-validatebox input_wb input" id="getwhen" value="{$info.joinshi}" data-options="required:true,validType:'length[1,20]'"  {if $ss_id neq ''} disabled="disabled"{/if} /></td>
+        </tr>
+        <tr>
+          <td width="30%" align="right">区：</td>
+          <td align="left"><input name="joinqu" class="easyui-validatebox input_wb input" id="getwhen" value="{$info.joinqu}" data-options="required:true,validType:'length[1,20]'"  {if $ss_id neq ''} disabled="disabled"{/if} /></td>
+        </tr>
+        <tr>
+          <td width="30%" align="right"><span>*</span> 学佛经历简述：</td>
+          <td align="left"><textarea name="getcontent" cols="80" rows="5" id="getcontent" {if $ss_id neq ''} disabled="disabled"{/if} >{$info.getcontent}</textarea></td>
+        </tr>
+      </table>
+      {if $ss_id eq ''}
+      <div class="tac mb10"> <span class="btn" id="submit"><span> <a href="#" class="easyui-linkbutton" data-options="plain:true,iconCls:'icon-save'">递交</a> </span></span> </div><br /><br /><br />
+  		{/if}
+  	</form>
+  </div>
+  <div class="part_banner_no1"></div>
+  {include file="public/page_foot1.html"} </div>
+  {insert_scripts files="../files/js/group_add.js"}
+{include file="public/page_foot.html"}

@@ -1,0 +1,116 @@
+{include file="public/page_head.html"}
+{insert_scripts files="../../files/js/xheditor/xheditor-1.1.14-zh-cn.min.js"}
+<div class="easyui-tabs" data-options="fit:true,border:false">
+	<div title="{$html_title}" style="padding:20px;overflow:auto;">
+		<div style="margin-top:5px;">
+			<div id="stypestate" style="">
+				<h2 class="h1">{$html_title}</h2>
+				<div class="admin_table mb10">
+					<table width="100%" cellspacing="0" cellpadding="0">
+						<tr class="tr1 vt">
+							<td class="td1" >姓名</td>
+							<td class="td2" >{$info.fullname}</td>
+							<td class="td1" >性别</td>
+							<td class="td2" >{if $info.gender eq '0'}女{else}男{/if}</td>
+						</tr>
+						<tr class="tr1 vt">
+							<td class="td1" >发心服务项目</td>
+							<td class="td2" >{$info.services_name}</td>
+							<td class="td1">年龄</td>
+							<td class="td2">{$info.agenum}</td>
+						</tr>
+						<tr>
+							<td class="td1">职业</td>
+							<td class="td2">{$info.profession}</td>
+							<td class="td1">文化程度</td>
+							<td class="td2">{$info.educational_level}</td>
+						</tr>
+						<tr class="tr1 vt">
+							<td class="td1">法名——藏文</td>
+							<td class="td2">{$info.farmington_tibetan}</td>
+							<td class="td1">法名——译文</td>
+							<td class="td2">{$info.farmington_zh}</td>
+						</tr>
+						<tr class="tr1 vt">
+							<td class="td1">学佛时间</td>
+							<td class="td2"> {$info.learning_start_time} </td>
+							<td class="td1">是否皈依上师达真堪步及皈依时间</td>
+							<td class="td2">{$info.convert_time} </td>
+						</tr>
+						<tr class="tr1 vt">
+							<td class="td1">联系地址</td>
+							<td class="td2">{$info.address}</td>
+							<td class="td1">联系电话</td>
+							<td class="td2">{$info.telnum}</td>
+						</tr>
+						<tr class="tr1 vt">
+							<td class="td1">QQ</td>
+							<td class="td2" >{$info.qqnum}</td>
+							<td class="td1">您是否参加过佛教义工服务</td>
+							<td class="td2" >{$info.joined_flag}</td>
+						</tr>
+						<tr class="tr1 vt">
+							<td class="td1">您有哪方面的专长</td>
+							<td class="td2" colspan="4"> {$info.specialty} </td>
+						</tr>
+						<tr class="tr1 vt">
+							<td class="td1">你愿意为众生提供哪些义工服务</td>
+							<td class="td2" colspan="4"> {foreach from=$info.willing_service.yz item=value}
+							{$value}
+							{/foreach}</td>
+						</tr>
+						<tr class="tr1 vt">
+							<td class="td1">报刊杂志印制</td>
+							<td class="td2" colspan="4">{foreach from=$info.willing_service.yz item=value}
+							{$value}
+							{/foreach}</td>
+						</tr>
+						<tr class="tr1 vt">
+							<td class="td1">网络共修讲堂</td>
+							<td class="td2" colspan="4">{foreach from=$info.willing_service.wl item=value}
+							{$value}
+							{/foreach}</td>
+						</tr>
+						<tr class="tr1 vt">
+							<td class="td1">网络论坛管理</td>
+							<td class="td2" colspan="4">{foreach from=$info.willing_service.lt item=value}
+							{$value}
+							{/foreach}</td>
+						</tr>
+						<tr class="tr1 vt">
+							<td class="td1">工程建设</td>
+							<td class="td2" colspan="4">{foreach from=$info.willing_service.gc item=value}
+							{$value}
+							{/foreach}</td>
+						</tr>
+						<tr class="tr1 vt">
+							<td class="td1">弘法宣传</td>
+							<td class="td2" colspan="4">{foreach from=$info.willing_service.hf item=value}
+							{$value}
+							{/foreach}</td>
+						</tr>
+						<tr class="tr1 vt">
+							<td class="td1">其他</td>
+							<td class="td2" colspan="4">{foreach from=$info.willing_service.qt item=value}
+							{$value}
+							{/foreach}</td>
+						</tr>
+						<tr class="tr1 vt">
+							<td class="td1">您能提供义工服务的时间说明</td>
+							<td class="td2" colspan="4">{$info.time_description}</td>
+						</tr>
+						<tr class="tr1 vt">
+							<td class="td1">您认为光明大圆满坛城的特色是</td>
+							<td class="td2" colspan="4">{$info.characteristic}</td>
+						</tr>
+						<tr class="tr1 vt">
+							<td class="td1">自我描述</td>
+							<td class="td2" colspan="4">{$info.self_descriptive}</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{include file="public/page_foot.html"}

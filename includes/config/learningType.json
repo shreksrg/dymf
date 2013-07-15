@@ -1,0 +1,54 @@
+{
+	"8": {
+		"name": "一年期加行课程",
+		"class": {
+			"wf_button": {
+				"name": "闻法",
+				"integral": 3
+			},
+			"gx_button": {
+				"name": "观修",
+				"integral": 3
+			}
+		}
+	},
+	"9": {
+		"name": "三年期加行课程",
+		"class": {
+			"wf_button": {
+				"name": "闻法",
+				"integral": 3
+			},
+			"gx_button": {
+				"name": "观修",
+				"integral": 3
+			}
+		}
+	},
+	"10": {
+		"name": "净土课程",
+		"class": {
+			"wf_button": {
+				"name": "闻法",
+				"integral": 3
+			},
+			"gx_button": {
+				"name": "观修",
+				"integral": 3
+			}
+		}
+	},
+	"11": {
+		"name": "闻思课程",
+		"class": {
+			"wf_button": {
+				"name": "闻法",
+				"integral": 3
+			},
+			"gx_button": {
+				"name": "观修",
+				"integral": 3
+			}
+		}
+	}
+}

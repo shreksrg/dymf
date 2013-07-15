@@ -1,0 +1,33 @@
+{include file="public/page_head.html"}
+{insert_scripts files="../../files/js/xheditor/xheditor-1.1.14-zh-cn.min.js"}
+<div class="easyui-tabs" data-options="fit:true,border:false">
+  <div title="{$html_title}" style="padding:20px;overflow:auto;">
+    <div style="margin-top:5px;">
+      <form method="post" action="?act=admin_article&st=edit_ss_article_info" id="websit_config">
+        <div id="stypestate" style="">
+          <h2 class="h1">{$html_title}</h2>
+          <div class="admin_table mb10">
+            <table width="100%" cellspacing="0" cellpadding="0">
+              <tr class="tr1 vt">
+                <td class="td1">内容标题</td>
+                <td class="td2"><input class="easyui-validatebox input_wb input" data-options="required:true,validType:'length[1,20]'" value="{$article.article_title}" name="article_title" /></td>
+              </tr> 
+              <tr class="tr1 vt">
+                <td class="td1">文章内容</td>
+                <td class="td2"><textarea name="article_content" id="article_content" style="width:700px; height:300px;">{$article.article_content}</textarea></td>
+              </tr>  
+              <tr>
+              	<td class="td1">设置当前显示</td>
+              	<td class="td2"><input type="hidden" value="{$article.article_id}" name="article_id" />
+              	<input name="set_top" type="checkbox" value="1" {if $article.set_top eq 1} checked="checked" {/if} /></td>
+              </tr>            
+            </table>
+          </div>
+          <div class="tac mb10"> <span class="btn" id="submit"><span> <a href="#" class="easyui-linkbutton" data-options="plain:true,iconCls:'icon-save'">递交</a> </span></span> </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+{insert_scripts files="../../files/admin/js/article/article_add.js"}
+{include file="public/page_foot.html"}

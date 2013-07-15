@@ -1,0 +1,46 @@
+{include file="public/page_head.html"}
+{insert_scripts files="../../files/js/xheditor/xheditor-1.1.14-zh-cn.min.js"}
+<div class="easyui-tabs" data-options="fit:true,border:false">
+  <div title="{$html_title}" style="padding:20px;overflow:auto;">
+    <div style="margin-top:5px;">
+      <form method="post" action="?act=admin_article&st=edit_article_info" id="websit_config">
+        <div id="stypestate" style="">
+          <h2 class="h1">{$html_title}</h2>
+          <div class="admin_table mb10">
+            <table width="100%" cellspacing="0" cellpadding="0">
+              <tr class="tr1 vt">
+                <td class="td1">文章标题</td>
+                <td class="td2"><input name="article_title"  value="{$article.article_title}" class="easyui-validatebox input_wb input" id="article_title" maxlength="20" data-options="required:true,validType:'length[1,20]'" />
+                <div class="help_a" style="display: block;"> 填写标题，必填</div></td>
+              </tr>
+              <tr class="tr1 vt">
+                <td class="td1">文章内容</td>
+                <td class="td2"><textarea name="article_content" id="article_content" style="width:700px; height:300px;">{$article.article_content}</textarea></td>
+              </tr>  
+              <tr class="tr1 vt">
+                <td class="td1">文章排序</td>
+                <td class="td2"><input type="text" name="sort" value="{$article.sort}" /></td>
+              </tr> 
+              <tr>
+              	<td class="td1">设置显示日期</td>
+              	<td class="td2"><input name="top_date" id="top_date"  class="easyui-datebox" required="true" value="{$article.set_top}"/></td>
+              </tr>
+              <tr class="tr1 vt">
+                <td class="td1">是否显示</td>
+                <td class="td2">
+                	<input type="checkbox" name="hide_flag" {if $article.hide_flag eq 0 || $article.article_id eq 0} checked="checked" {/if} />
+                	<input type="hidden" value="{$article.article_id}" name="article_id" />
+                	<input type="hidden" value="{$p_id}" name="part_id" id="part_id"/>
+                	<input type="hidden" value="{$num}" id="num" name="num"  />
+                	</td>
+              </tr>             
+            </table>
+          </div>
+          <div class="tac mb10"> <span class="btn" id="submit"><span> <a href="#" class="easyui-linkbutton" data-options="plain:true,iconCls:'icon-save'">递交</a> </span></span> </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+{insert_scripts files="../../files/admin/js/article/article_add.js"}
+{include file="public/page_foot.html"}

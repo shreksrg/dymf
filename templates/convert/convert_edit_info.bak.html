@@ -1,0 +1,183 @@
+{include file="public/page_head.html"}
+<link href="../../files/js/jquery.easyui/themes/default/easyui.css" rel="stylesheet" type="text/css" />
+<link href="../../files/js/jquery.easyui/themes/icon.css" rel="stylesheet" type="text/css" />
+{insert_scripts files="../files/js/jquery.min.js"}
+{insert_scripts files="../files/js/jquery.easyui/jquery.easyui.min.js"}
+{insert_scripts files="../files/js/jquery.easyui/locale/easyui-lang-zh_CN.js"}
+<link href="../../files/css/index.css" rel="stylesheet" type="text/css" />
+{if $msg neq ""}
+<script>
+	alert('{$msg}');
+	window.location.href="?act=convert&st=my_list_page";
+</script>
+{/if}
+<form method="post" action="?act=convert&st=edit_convert_info" id="websit_config">
+	<table>
+		<tr>
+			<td valign="top">基础信息：</td>
+			<td>
+			<table>
+				<tr>
+					<td>姓名
+					<input name="c_name" type="text"  value="{$info.name}" />
+					</td>
+				</tr>
+				<tr>
+					<td>性别
+						<input type="radio" name="c_sex" value="0"  {if $info.sex eq '0'} checked="checked"{/if} />女
+					
+						<input type="radio" name="c_sex" value="1" {if $info.sex eq '1'} checked="checked"{/if} >男
+					</td>
+				</tr>
+				<tr>
+					<td>生日
+					<input name="c_birth" type="text" class="easyui-datebox"  value="{$info.date_birth}"  />
+					</td>
+				</tr>
+				<tr>
+					<td>提交时间
+					{$info.add_time}
+					</td>
+				</tr>
+				<tr>
+					<td>法名
+					<input name="c_farmington" type="text"  value="{$info.farmington}" />
+					</td>
+				</tr>
+				<tr>
+					<td>处理状态&nbsp;&nbsp;&nbsp;{if $info.status eq '0'}未处理{else}已处理{/if}
+					</td>
+				</tr>
+			</table></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td>
+			<table>
+				<tr>
+					<td>您皈依的缘起：</td>
+				</tr>
+				<tr>
+					<td>A、为救度有情而愿解脱、成就，弘法利生。</td><td>
+					<input type="radio" name="origin"  value="为救度有情而愿解脱、成就，弘法利生。" {if $info.origin eq '为救度有情而愿解脱、成就，弘法利生。'} checked="checked"{/if} />
+					</td>
+				</tr>
+				<tr>
+					<td>B、希望得到佛菩萨加持，消灾免难，使家庭美满，工作顺利。</td><td>
+					<input type="radio" name="origin"  value="希望得到佛菩萨加持，消灾免难，使家庭美满，工作顺利。"  {if $info.origin eq '希望得到佛菩萨加持，消灾免难，使家庭美满，工作顺利。'} checked="checked"{/if} />
+					</td>
+				</tr>
+				<tr>
+					<td>C、为追寻精神上的依托。</td><td>
+					<input type="radio" name="origin"  value="为追寻精神上的依托。" {if $info.origin eq '为追寻精神上的依托。'} checked="checked"{/if}/>
+					</td>
+				</tr>
+				<tr>
+					<td>D、对密宗感兴趣，想跟上师结个缘。</td><td>
+					<input type="radio" name="origin"  value="对密宗感兴趣，想跟上师结个缘。" {if $info.origin eq '对密宗感兴趣，想跟上师结个缘。'} checked="checked"{/if}/>
+					</td>
+				</tr>
+				<tr>
+					<td>您学佛的情况：</td>
+				</tr>
+				<tr>
+					<td>A、平时经常听经闻法、看佛书，经常去寺院、道场做佛事，乐于参加佛教活动。</td><td>
+					<input type="radio" name="situation"  value="平时经常听经闻法、看佛书，经常去寺院、道场做佛事，乐于参加佛教活动。" {if $info.situation eq '平时经常听经闻法、看佛书，经常去寺院、道场做佛事，乐于参加佛教活动。'} checked="checked"{/if}/>
+					</td>
+				</tr>
+				<tr>
+					<td>B、平时经常听经闻法、看佛书，在自己家的佛堂做课、修法。</td><td>
+					<input type="radio" name="situation"  value="平时经常听经闻法、看佛书，在自己家的佛堂做课、修法。"  {if $info.situation eq '平时经常听经闻法、看佛书，在自己家的佛堂做课、修法。'} checked="checked"{/if}/>
+					</td>
+				</tr>
+				<tr>
+					<td>C、偶尔听经闻法、看佛书，但是基本不做课、不修法。</td><td>
+					<input type="radio" name="situation"  value="偶尔听经闻法、看佛书，但是基本不做课、不修法。"  {if $info.situation eq '偶尔听经闻法、看佛书，但是基本不做课、不修法。'} checked="checked"{/if}/>
+					</td>
+				</tr>
+				<tr>
+					<td>D、不听经闻法、不看佛书，有时候去寺院烧香拜佛。</td><td>
+					<input type="radio" name="situation"  value="不听经闻法、不看佛书，有时候去寺院烧香拜佛。"  {if $info.situation eq '不听经闻法、不看佛书，有时候去寺院烧香拜佛。'} checked="checked"{/if}/>
+					</td>
+				</tr>
+				<tr>
+					<td>您学佛的时间：</td>
+				</tr>
+				<tr>
+					<td>A、五年以上，一直不间断学佛修行。</td><td>
+					<input type="radio" name="learning_time"  value="五年以上，一直不间断学佛修行。" {if $info.learning_time eq '五年以上，一直不间断学佛修行。'} checked="checked"{/if}/>
+					</td>
+				</tr>
+				<tr>
+					<td>B、两年以上，一直不间断学佛修行。</td><td>
+					<input type="radio" name="learning_time"  value="两年以上，一直不间断学佛修行。" {if $info.learning_time eq '两年以上，一直不间断学佛修行。'} checked="checked"{/if} />
+					</td>
+				</tr>
+				<tr>
+					<td>C、接触佛教很多年，断断续续地学佛修行。</td><td>
+					<input type="radio" name="learning_time"  value="接触佛教很多年，断断续续地学佛修行。" {if $info.learning_time eq '接触佛教很多年，断断续续地学佛修行。'} checked="checked"{/if}/>
+					</td>
+				</tr>
+				<tr>
+					<td>D、接触佛教一两年。</td><td>
+					<input type="radio" name="learning_time"  value="接触佛教一两年。" {if $info.learning_time eq '接触佛教一两年。'} checked="checked"{/if}/>
+					</td>
+				</tr>
+				<tr>
+					<td>您的家庭环境</td>
+				</tr>
+				<tr>
+					<td>A、全家都学佛，家人之间都是同修道友。</td><td>
+					<input type="radio" name="family_environment"  value="全家都学佛，家人之间都是同修道友。"  {if $info.family_environment eq '全家都学佛，家人之间都是同修道友。'} checked="checked"{/if}/>
+					</td>
+				</tr>
+				<tr>
+					<td>B、家人信佛但是不学佛，对我学佛不排斥。</td><td>
+					<input type="radio" name="family_environment"  value="家人信佛但是不学佛，对我学佛不排斥。" {if $info.family_environment eq '家人信佛但是不学佛，对我学佛不排斥。'} checked="checked"{/if} />
+					</td>
+				</tr>
+				<tr>
+					<td>C、家人不信佛，但是不干涉我学佛。</td><td>
+					<input type="radio" name="family_environment"  value="家人不信佛，但是不干涉我学佛。" {if $info.family_environment eq '家人不信佛，但是不干涉我学佛。'} checked="checked"{/if}/>
+					</td>
+				</tr>
+				<tr>
+					<td>D、家人不信佛，也反对我学佛。</td><td>
+					<input type="radio" name="family_environment"  value="家人不信佛，也反对我学佛。" {if $info.family_environment eq '家人不信佛，也反对我学佛。'} checked="checked"{/if}/>
+					</td>
+				</tr>
+				<tr>
+					<td>您的饮食习惯： </td>
+				</tr>
+				<tr>
+					<td>A、素食，滴酒不沾。</td><td>
+					<input type="radio" name="eating_habits"  value="素食，滴酒不沾。" {if $info.eating_habits eq '素食，滴酒不沾。'} checked="checked"{/if}/>
+					</td>
+				</tr>
+				<tr>
+					<td>B、素食，工作应酬时喝一点酒。</td><td>
+					<input type="radio" name="eating_habits"  value="素食，工作应酬时喝一点酒。" {if $info.eating_habits eq '素食，工作应酬时喝一点酒。'} checked="checked"{/if}/>
+					</td>
+				</tr>
+				<tr>
+					<td>C、吃肉、喝酒，但不杀生。</td><td>
+					<input type="radio" name="eating_habits"  value="吃肉、喝酒，但不杀生。" {if $info.eating_habits eq '吃肉、喝酒，但不杀生。'} checked="checked"{/if}/>
+					</td>
+				</tr>
+				<tr>
+					<td>D、吃肉、喝酒，也不介意杀生。</td><td>
+					<input type="radio" name="eating_habits"  value="吃肉、喝酒，也不介意杀生。" {if $info.eating_habits eq '吃肉、喝酒，也不介意杀生。'} checked="checked"{/if}/>
+					</td>
+				</tr>
+			</table></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td>
+			<input type="hidden" name="c_id" value="{$info.id}" />
+			<input type="submit" value="提  交" style="width: 60px" />
+			</td>
+		</tr>
+	</table>
+</form>
+{include file="public/page_foot.html"}

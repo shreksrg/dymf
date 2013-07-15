@@ -1,0 +1,167 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title></title>
+    <script type="text/javascript" src="/files/js/jquery.min.js"></script>
+</head>
+<style type="text/css">
+
+    body, h1, h2, h3, h4, h5, h6, hr, p, blockquote,
+    dl, dt, dd, ul, ol, li,
+    pre,
+    fieldset, lengend, input, textarea,
+    th, td {
+        margin: 0;
+        padding: 0;
+    }
+
+    ul, ol {
+        list-style: none;
+    }
+
+
+</style>
+<body>
+<div id="panel-course">
+    <div class="pc-left">
+        <button name='btnWS'>闻思班</button>
+        <button name='btnJT'>净土班</button>
+        <button name='btnJX'>加行班</button>
+    </div>
+
+    <div id="countFormer">
+        <form id="frmLearner" action="">
+            <div class="pc-right">
+                <ul>
+                    <li>
+                        <h2>戒律自查</h2>
+
+                        <p cscode='ws001'>
+                            <label for="">本月数</label><input citem='mc' type="text"/>
+                            <label for="">累计数</label><input citem='sc' type=""/>
+                        </p>
+                    </li>
+                    <li>
+                        <h2>必修课</h2>
+
+                        <p cscode='ws002'>
+                            <b>每日闻法</b>
+                            <label for="">本月数</label><input citem='mc' type=""/>
+                            <label for="">累计数</label><input citem='sc' type=""/>
+                        </p>
+
+                        <p cscode='ws003'>
+                            <b>参加辅导</b>
+                            <label for="">本月数</label><input citem='mc' type=""/>
+                            <label for="">累计数</label><input citem='sc' type=""/>
+                        </p>
+
+                        <p cscode='ws004'>
+                            <b>反复闻思</b>
+                            <label for="">本月数</label><input citem='mc' type=""/>
+                            <label for="">累计数</label><input citem='sc' type=""/>
+                        </p>
+                    </li>
+                </ul>
+            </div>
+            <div class="pc-btmbtns">
+                <button>提交</button>
+                <input type="reset" value="重置"/>
+
+            </div>
+            <input type="hidden" name="stuid" value="23"/>
+        </form>
+    </div>
+
+</div>
+
+
+</body>
+</html>
+
+<script type="text/javascript">
+
+    //var clsCodes = ['ws', 'jt', 'jx']; //学修班编码组
+    var clsCode = null;  //当前选择的学修班编码
+
+    /**
+     * 加载班级学修统计表单
+     * @code String 学修班编码
+     */
+    function loadCountForm(clsCode) {
+        var url = "";
+        $.post(url, {'clscode': clsCode}, function (data) {
+            //  var data = {'err': 0, 'content': 'formData'}
+            if (data.err == 0) {
+                $('#countFormer').empty().append(data['content']);
+            } else {
+                alert(data['content']);
+            }
+        }, 'json')
+    }
+
+    /**
+     * 序列化统计项数据并返回
+     * @return Array 统计项数组
+     */
+    function serializeCountData() {
+        var stats = new Array();
+        $('[cscode]').each(function (i) {
+            var cscode = $(this).attr('cscode');
+            var mc = $(this).find('input[citem=mc]').val();
+            var sc = $(this).find('input[citem=sc]').val();
+            var stat = {'cscode': cscode, 'monthcount': mc, 'sumcount': sc}
+            stats.push(stat);
+        });
+        return stats;
+    }
+
+    /**
+     * 设置提交数据
+     * @return Array 统计项数组
+     */
+    function setSubmitData() {
+        var stuid = $('input[name=stuid]').val();
+        var stats = serializeCountData();
+        var data = {'stuid': stuid, 'clscode': clsCode, 'stats': stats }
+        return data;
+    }
+
+    /**
+     * 提交统计项表单
+     * @return Array 统计项数组
+     */
+    function submitCountForm() {
+        $('#frmLearner').form('submit', {
+                    url: "",
+                    onSubmit: function (param) {
+                        param = setSubmitData();
+                        return false;
+                    },
+                    success: function (r) {
+                        alert(r['msg']);
+                    }
+                }
+        )
+    }
+
+    /*===========*/
+
+    $('button[name=btnWS]').click(function () {
+        clsCode = 'ws'
+        console.log(setSubmitData());
+    })
+
+    $('button[name=btnJT]').click(function () {
+        clsCode = 'jt';
+        console.log(setSubmitData());
+    })
+
+    $('button[name=btnJX]').click(function () {
+        clsCode = 'jx';
+        console.log(setSubmitData());
+    })
+
+
+</script>

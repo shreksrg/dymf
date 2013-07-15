@@ -1,0 +1,1 @@
+<div class="banner_no1 footer1">网站备案号：<?php echo $this->_var['web_icp']; ?> | <a href="<?php echo $this->_var['cms_web_contactme']; ?>">联系我们</a></div>

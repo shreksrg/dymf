@@ -1,0 +1,112 @@
+{include file="public/page_head.html"}
+<link href="../../files/css/article.css" rel="stylesheet" type="text/css" />
+<div class='body'>
+	<div class="body_back">
+		<!--<div class="banner_no1" style="text-align:right;">
+			<div>
+				<a href="./">首页</a> | <a href="{$CONTACT_US_URL}">联系我们</a>
+			</div>
+		</div>-->
+		<div style="background-color:#0169be">
+			<table width="100%" border="0" cellspacing="0" cellpadding="0">
+				<tr>
+					<td  valign="top" width="737">
+					<div class='left_top'>
+						首页 > <a href="./">{$webname}</a> > {$part_name}
+					</div>
+					<div class="left_body">
+						<div class="left_inner" >
+							<div class="article_title">
+								<h2>{$info.article_title}</h2>
+							</div>
+							<div class="art_attr">
+								更新日期：{$info.raw_update_time}&nbsp;&nbsp;点击数:{$info.click_num}&nbsp;&nbsp;文字：[<a href="javascript:void(0);" onclick="edit_font(18)">大</a>][<a href="javascript:void(0);" onclick="edit_font(16)">中</a>][<a href="javascript:void(0);" onclick="edit_font(14)">小</a>]
+							</div>
+							<div class="art_content">
+								<span style="font-size:14px" id="a_content"> {$info.article_content} </span>
+							</div>
+						</div>
+					</div></td>
+					<td valign="top"><div class="cj_right_top"></div>
+					<div class="cj_right_body">
+						{if $info.part_id neq $XXZN}
+						<table class="art_right_table" width="100%" border="0" cellspacing="0" cellpadding="0">
+							<tr>
+								<td class="top">
+								<div>
+									学修指南
+								</div></td>
+							</tr>
+							<tr>
+								<td valign="top">
+								<div class="art_ll_list">
+									<ul>
+										{foreach from=$xxzndata item=value}
+
+										<li>
+											<a href="{$defaultA}&id={$value.article_id}">{$value.article_title}</a>
+                                            <span style="float: right; margin-right:20px;">{$value.raw_add_time}</span>
+										</li>
+										{/foreach}
+									</ul>
+								</div></td>
+							</tr>
+						</table>
+						{/if}
+						{if $info.part_id neq $XXDT}
+						<table class="art_right_table" width="100%" border="0" cellspacing="0" cellpadding="0">
+							<tr>
+								<td class="top">
+								<div>
+									学修动态
+								</div></td>
+							</tr>
+							<tr>
+								<td valign="top">
+								<div class="art_ll_list">
+									<ul>
+										{foreach from=$xxdtdata item=value}
+
+										<li>
+											<a href="{$defaultA}&id={$value.article_id}">{$value.article_title|truncate:12:'':false}</a>
+                                            <span style="float: right; margin-right:20px;">{$value.raw_add_time}</span>
+										</li>
+										{/foreach}
+									</ul>
+								</div></td>
+							</tr>
+						</table>
+						{/if}
+						{if $info.part_id neq $JTZX}
+						<table class="art_right_table" width="100%" border="0" cellspacing="0" cellpadding="0">
+							<tr>
+								<td class="top">
+								<div>
+									讲堂资讯
+								</div></td>
+							</tr>
+							<tr>
+								<td valign="top">
+								<div class="art_ll_list">
+									<ul>
+										{foreach from=$jtzxdata item=value}
+
+										<li>
+											<a href="{$defaultA}&id={$value.article_id}">{$value.article_title|truncate:12:'--'}</a>
+                                            <span style="float: right; margin-right:20px;">{$value.raw_add_time}</span>
+										</li>
+										{/foreach}
+									</ul>
+								</div></td>
+							</tr>
+						</table>
+						{/if}
+					</div></td>
+				</tr>
+			</table>
+		</div>
+		<!--<div class="part_banner_no1"></div>-->
+		{include file="public/page_foot1.html"}
+	</div>
+	{insert_scripts files="../files/js/article.js"}
+	{include file="public/page_foot.html"}

@@ -1,0 +1,83 @@
+<?php echo $this->fetch('public/page_head.html'); ?>
+<link href="files/admin/css/main.css" rel="stylesheet" type="text/css" />
+<link href="files/css/part.css" rel="stylesheet" type="text/css" />
+<?php if ($this->_var['msg'] != ""): ?>
+<script>
+	alert("<?php echo $this->_var['msg']; ?>");
+	window.location.href="?act=group&st=showHTML";
+</script>
+<?php endif; ?>
+<div class='body'>
+  <div class="body_back">
+    <div class="banner_no1" style="text-align:right;">
+      <div></div>
+    </div>
+    <div class="top_route"></div>
+    <div id="g_con_body">
+      <h1>用户注册</h1>
+      <div class="show">* 以下内容为必填项</div>
+      <form method="post" action="?act=user&st=user_addAction" id="websit_config">
+      <table id="g_con_body_table" width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td width="30%" align="right">&nbsp;</td>
+          <td align="left">&nbsp;</td>
+        </tr><tr class="tr1 vt">
+                <td align="right" class="td1">用戶名</td>
+          <td class="td2"><input name="user_name" class="easyui-validatebox input_wb input" id="user_name" maxlength="20" data-options="required:true,validType:'length[1,20]'" /></td>
+              </tr>
+              <tr class="tr1 vt">
+                <td align="right" class="td1">密码</td>
+                <td class="td2"><input name="user_password" type="password" class="easyui-validatebox input_wb input" id="user_password" maxlength="20" data-options="required:true,validType:'length[1,20]'" /></td>
+              </tr>
+              <tr class="tr1 vt">
+                <td align="right" class="td1">全名</td>
+                <td class="td2"><input name="user_fullname" class="easyui-validatebox input_wb input" id="user_fullname" maxlength="10" data-options="required:true,validType:'length[1,20]'" /></td>
+              </tr>
+              <tr class="tr1 vt" style="display:none">
+                <td align="right" class="td1">是否为管理员</td>
+                <td class="td2"><input name="admin_flag" type="radio" value="0" checked="checked" />
+                  否
+                  <input name="admin_flag" type="radio" value="1" />
+                  是 </td>
+              </tr>
+              <tr class="tr1 vt">
+                <td align="right" class="td1">Email</td>
+                <td class="td2"><input name="user_email" class="easyui-validatebox input_wb input" id="user_email" maxlength="50" data-options="required:true,validType:'email'" /></td>
+              </tr>
+              <tr class="tr1 vt">
+                <td align="right" class="td1">移动电话</td>
+                <td class="td2"><input name="user_mobilenum" class="easyui-validatebox input_wb input" id="user_mobilenum" maxlength="20" data-options="required:true,validType:'length[1,20]'" /></td>
+              </tr>
+      </table>
+         <div class="tac mb10"> <span class="btn" id="submit"><span> <a id="reg_action" href="#" class="easyui-linkbutton" data-options="plain:true,iconCls:'icon-save'">递交</a> </span></span> </div><br /><br /><br />
+  	</form>
+  </div>
+  <div class="part_banner_no1"></div>
+  <?php echo $this->fetch('public/page_foot1.html'); ?> </div>
+
+<script type="text/javascript">
+$(function(){
+    $("a#reg_action").click(function(){
+        var _username = $("#user_name").val();
+        if ($.trim(_username).length < 1) {
+            alert('请输入用户名！');
+            return false;
+        }
+        var _password = $("#user_password").val();
+        if ($.trim(_password).length < 1) {
+            alert('请输入密码！');
+            return false;
+        }
+        var _fullname = $("#user_fullname").val()
+        if ($.trim(_fullname).length < 1) {
+            alert('请输入姓名！');
+            return false;
+        }
+        var _href = '?act=index&st=reginUser&un=' + _username + '&ps=' + _password + '&fn=' + _fullname;
+        window.location.href = _href;
+        return false;
+    });
+})
+</script>
+
+<?php echo $this->fetch('public/page_foot.html'); ?>

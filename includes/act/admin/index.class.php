@@ -1,0 +1,107 @@
+<?php
+/**
+ * admin 目录下 index 业务逻辑操作类
+ * @author    jonah.fu
+ * @date    2012-09-04
+ */
+class act_admin_index
+{
+
+    /**
+     * index 主题
+     */
+    public static function main()
+    {
+        echo '..';
+
+    }
+
+    /**
+     * index 菜单
+     */
+    public static function menu()
+    {
+        base_cmshop::smarty()->assign('user_name', $_SESSION["user_name"]);
+        base_cmshop::smarty()->assign('ssjy', SSJY);
+        base_cmshop::smarty()->assign('gyrx', GYRX);
+        base_cmshop::smarty()->assign('jckc', JCKC);
+        base_cmshop::smarty()->assign('xxzn', XXZN);
+        base_cmshop::smarty()->assign('xxdt', XXDT);
+        base_cmshop::smarty()->assign('xxjc', XXJC);
+        base_cmshop::smarty()->assign('jtzx', JTZX);
+        base_cmshop::smarty()->assign('jtdt', JTDT);
+        base_cmshop::smarty()->assign('dymf', DYMF);
+        base_cmshop::smarty()->assign('ckqz', CKQZ);
+        base_cmshop::smarty()->display('menu.html');
+    }
+
+    /**
+     * index 顶部
+     */
+    public static function top()
+    {
+        base_cmshop::smarty()->display('top.html');
+    }
+
+    /**
+     * 登录页面
+     */
+    public static function loginHTML()
+    {
+        base_cmshop::smarty()->display('login.html');
+    }
+
+    /**
+     * 登录验证
+     */
+    public static function loginAction($webLogin = 0)
+    {
+
+        if (!isset($_POST['username']) || !isset($_POST['password'])) {
+            echo json_encode(array('errMsg' => '用户名或密码不正确'));
+            return;
+        }
+        $loginData = array();
+        $loginData['user_name'] = trim($_POST['username']);
+        $loginData['user_password'] = trim($_POST['password']);
+
+        if (!model_admin_index::get_loginAction($loginData)) {
+            if ($webLogin) {
+                echo json_encode(array('errMsg' => '用户名或密码不正确'));
+            } //static_function::jsMsg("登录出错");
+            else {
+               // static_function::jsMsg("登录出错");
+                base_cmshop::admin_msg("登录出错！");
+            }
+            //base_cmshop::admin_msg("登录出错！");
+
+        } else {
+            $userInfo = model_admin_user::get_user_info($loginData['user_name']);
+            $_SESSION['user_id'] = $userInfo['user_id'];
+            $_SESSION['user_name'] = $userInfo['user_name'];
+            $_SESSION['user_rank'] = $userInfo['admin_flag'];
+            $_SESSION['discount'] = '';
+            $_SESSION['user_fullname'] = $userInfo['user_fullname'];
+            $_SESSION['email'] = $userInfo['user_email'];
+            $_SESSION['raw_add_time'] = $userInfo['raw_add_time'];
+            if ($userInfo['admin_flag'] * 1)
+                $_SESSION['admin_id'] = $userInfo['user_id'];
+            $_SESSION['loginDate'] = date('Y-m-d H:i:s');
+
+
+            if (!$webLogin) {
+                base_cmshop::admin_msg("登录成功！", 2, array(array(
+                    "text" => "菜单",
+                    "href" => "./"
+                )));
+                // echo 1;
+            } else {
+                //  static_function::jsMsg("登录成功", './');
+                echo json_encode(array('fullname' => $_SESSION['user_fullname']));
+
+            }
+        }
+
+    }
+
+}

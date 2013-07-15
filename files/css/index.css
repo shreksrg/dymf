@@ -1,0 +1,532 @@
+a.default1 {
+    color: #a07954;
+    text-decoration: none;
+}
+
+#index_top1 {
+    background-image: url(../images/academy/proverb.jpg);
+    height: 348px;
+    width: 1008px;
+    margin: 0 auto;
+}
+
+#index_top2 {
+    height: 156px;
+    background-color: #FFFFFF
+}
+
+#index_top3 {
+    text-align: center;
+    color: #670001;
+    height: 42px;
+    line-height: 42px;
+}
+
+#index_top4 {
+    height: 152px;
+    width: 996px;
+    margin: 0 auto;
+    background-image: url(../images/fw_r10_c4.jpg)
+}
+
+#index_top4 td.top {
+    padding-top: 18px;
+    _height: 123px;
+}
+
+#index_top4 td.right {
+    text-align: left;
+    padding-left: 26px;
+    height: 26px;
+}
+
+#index_top4 td a.show, #index_top2 a.show {
+    background: url(../images/academy/icon_1.jpg) no-repeat 0 -282px;
+
+    padding-left: 24px;
+}
+
+#index_login {
+    background: url(../images/fw_r13_c5.jpg) no-repeat;
+    width: 206px;
+    border: 1px solid #ebebeb;
+    padding-bottom: 8px;
+    margin-bottom: 12px;
+}
+
+#index_login li {
+    line-height: 26px;
+    margin-left: 20px;
+    height: 26px;
+}
+
+#index_login input {
+    width: 100px;
+}
+
+#index_my_classes {
+    background: url(../images/fw_r13_c5.jpg) no-repeat;
+    width: 206px;
+
+    border: 1px solid #ebebeb;
+    padding-bottom: 8px;
+    margin-bottom: 12px;
+}
+
+#index_my_classes td {
+    color: #640200;
+    height: 30px;
+    line-height: 30px;
+}
+
+#index_my_classes td a {
+    color: #640200;
+    text-decoration: none;
+}
+
+#index_my2, #index_my3 {
+    background: url(../images/fw_r13_c5.jpg) no-repeat;
+    width: 206px;
+    border: 1px solid #ebebeb;
+    padding-bottom: 8px;
+    margin-bottom: 12px;
+
+}
+
+#index_my2 a {
+    color: #640200;
+    text-decoration: none;
+    background: url(../images/academy/icon_1.jpg) no-repeat 0 -317px;
+
+    padding-left: 30px;
+}
+
+#index_my2 li {
+    line-height: 30px;
+    margin-left: 50px;
+}
+
+.index_ask_title {
+    color: #650302;
+    text-align: left;
+    background: url("../images/academy/icon_1.jpg") no-repeat 0 -98px;
+    padding-left: 2em;
+    height: 36px;
+    line-height: 36px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+#index_ph_top {
+    background: url(../images/fw_r12_c9.jpg) no-repeat;
+    width: 237px;
+    height: 38px;
+}
+
+#index_top_left_li ul {
+    margin-top: 90px;
++ margin-top : 40 px;
+    height: 300px;
+}
+
+#index_top_left_li li {
+    height: 10px;
+    line-height: 10px;
+    margin-left: 50px;
+    text-align: center;
+    margin-top: 45px;
+}
+
+#index_top_left_li a {
+    color: #640101;
+    font-size: 15px;
+    text-decoration: none;
+}
+
+#jt_content1 {
+    text-align: left;
+
+}
+
+#jt_content1 li {
+    height: 24px;
+    line-height: 24px;
+    font-size: 12px;
+}
+
+#jt_content2 {
+    text-align: left;
+
+}
+
+#jt_content2 li {
+    height: 24px;
+    line-height: 24px;
+}
+
+#kcap_list {
+    text-align: left;
+    padding-left: 30px;
+    height: 150px;
+}
+
+#kcap_list li {
+    line-height: 30px;
+    background-image: none; /* url(../images/index_r5_c5.png) */
+}
+
+#kcap_list li a {
+    color: #B4A192;
+}
+
+#kcap_list li.onselect {
+    background: url("../images/academy/icon_1.jpg") no-repeat 100px -66px;
+
+}
+
+#kcap_list li.onselect a {
+    color: #B4A192;
+}
+
+#table_items td {
+    text-align: center;
+    line-height: 14px;
+}
+
+#table_items img {
+    float: right;
+    margin-right: 20px;
+}
+
+/* class style */
+.index_ask_body {
+    background-color: #f1ebdb;
+    padding: 20px;
+    color: #a17955;
+}
+
+.index_lesson_table {
+    background-color: #bcbcbc;
+    width: 100%;
+    border-left: #C8B9AE solid 1px;
+    border-top: #C8B9AE solid 1px;
+    border-collapse: collapse;
+}
+
+.index_lesson_table td {
+    background-color: #fff;
+    text-align: center;
+    font-size: 12px;
+
+    height: 18px;
+    border-right: #C8B9AE solid 1px;
+    border-bottom: #C8B9AE solid 1px;
+    padding: 2px;
+
+}
+
+.index_lesson_table2 {
+    background-color: #bcbcbc;
+    width: 100%;
+    border-left: #C8B9AE solid 1px;
+    border-top: #C8B9AE solid 1px;
+    border-collapse: collapse;
+    height: 100%;
+    height: 344 px\9;
+}
+
+.index_lesson_table2 td {
+    border-top: 0px;
+    background-color: #fff;
+    text-align: center;
+    width: 15%;
+    border-right: #C8B9AE solid 1px;
+    border-bottom: #C8B9AE solid 1px;
+    padding: 6px;
+    vertical-align: top;
+    color: #A17955;
+    line-height: 30px;
+}
+
+.index_ph1table {
+    background-color: #bcbcbc;
+    width: 100%;
+    border-left: #C8B9AE solid 1px;
+    border-top: #C8B9AE solid 1px;
+    border-collapse: collapse;
+    margin-bottom: 16px;
+}
+
+.index_ph1table tbody td {
+    font-size: 14px;
+}
+
+.index_ph1table thead td {
+    font-size: 12px;
+}
+
+.index_ph1table td {
+    background-color: #fff;
+    text-align: center;
+
+    width: 15%;
+    height: 16px;
+    line-height: 16px;
+    border-right: #C8B9AE solid 1px;
+    border-bottom: #C8B9AE solid 1px;
+    vertical-align: top;
+}
+
+.index_ph1table .top {
+    background-color: #f4f5f9
+}
+
+#main {
+    overflow: hidden;
+    position: relative;
+    border: 0 #C6F solid;
+}
+
+.main_left {
+    float: left;
+    position: relative;
+    background: url(../images/main_06.png) repeat-y;
+    width: 154px;
+    padding-bottom: 3000px;
+}
+
+.main_right {
+    position: relative;
+    float: right;
+    background: url(../images/main_05.png) repeat-y;
+    width: 154px;
+    padding-bottom: 3000px;
+}
+
+#main_head {
+    background: url(../images/main_03.png);
+    width: 992px;
+    height: 44px;
+    color: #FFF;
+    text-align: right;
+    vertical-align: middle;
+    line-height: 44px;
+}
+
+#main_head a {
+    margin-right: 20px;
+    font-size: 15px;
+    color: #FFF;
+    vertical-align: middle;
+}
+
+#main_footer {
+    background: url(../images/main_04.png);
+    width: 992px;
+    height: 44px;
+    color: #FFF;
+    text-align: center;
+    line-height: 44px;
+    vertical-align: middle;
+}
+
+#main_footer a {
+    font-size: 15px;
+    color: #FFF;
+    vertical-align: middle;
+}
+
+#main_foo_img {
+    background: url(../images/main_02.png);
+    height: 124px;
+    margin-bottom: 0px;
+}
+
+#mainContent {
+    margin-left: 154px;
+    vertical-align: middle;
+}
+
+.main_title {
+    font-size: 14px;
+    height: 40px;
+    line-height: 40px;
+    margin-left: 20px;
+}
+
+#content {
+    height: 360px;
+    width: 900px;
+    margin: 0 auto;
+    margin-top: 2em;
+    text-align: center;
+    border: #B2B2B2 solid 1px;
+}
+
+#content .title {
+    background: url(../images/question_r2_c2.jpg);
+    height: 48px;
+    line-height: 48px;
+    font-weight: bolder;
+    font-size: 14px;
+}
+
+#content .q_body {
+    text-align: center;
+}
+
+#cont_left {
+    background: url(../images/查看课程列表方式_03.png);
+    width: 585px;
+    float: left;
+}
+
+#cont_left table {
+    width: 97%;
+    margin-left: 10px;
+    margin-top: 3px;
+}
+
+#cont_left tr {
+    background: url(../images/查看课程列表方式_06.png);
+    width: 560px;
+    height: 19px;
+    text-align: left;
+    list-style-type: none;
+    margin-top: 10px;
+}
+
+#cont_right {
+    background: url(../images/查看课程列表方式_04.png);
+    width: 407px;
+    float: right;
+}
+
+.cont_right_img {
+    background: url(../images/查看课程列表方式_07.png);
+    width: 407px;
+    height: 149px;
+    float: inherit;
+}
+
+.cont_fg {
+    background: url(../images/查看课程列表方式_05.png);
+    width: 568px;
+    height: 5px;
+    margin-left: 10px;
+    margin-top: 3px
+}
+
+.cont_head {
+    background: url(../images/查看课程列表方式_01.png);
+    width: 992px;
+    height: 27px;
+}
+
+.cont_footer {
+    clear: both;
+    border: silver 1px solid;
+    margin-left: auto;
+    overflow: auto;
+    margin-right: auto;
+    background: url(../images/查看课程列表方式_02.png);
+    width: 992px;
+    height: 28px;
+}
+
+#content span {
+    text-align: left;
+    margin-left: 30px;
+    margin-top: 20px
+}
+
+.login_class {
+    height: 35px;
+    height: 20 px\9;
+    height: 40 px\0;
+    _height: 16px;
+    _line-height: 16px;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+
+}
+
+#frmModifyPwd table {
+    width: 280px;
+    margin: 0 auto;
+    margin-top: 1em;
+}
+
+#frmModifyPwd table tr td {
+    padding: 6px;
+}
+
+#winLogin table {
+    width: 320px;
+    margin: 0 auto;
+    margin-top: 1em;
+}
+
+#winLogin table tr td {
+    padding: 6px;
+}
+
+#winLogin table tr td input {
+    width: 150px
+}
+
+.chpwd, .chprofile, .logout {
+    background: url("../images/academy/icon_login.gif") no-repeat;
+    padding-left: 1.8em;
+    height: 26px;
+    line-height: 26px;
+    display: inline-block;
+    float: left;
+}
+
+.chpwd {
+    background-position: 0 -40px;
+    padding-right: 6px;
+}
+
+.chprofile {
+    background-position: 0 -80px;
+}
+
+.logout {
+    background-position: 0 -120px;
+}
+
+/**学修记录填写表单 data 2013-07-14*/
+#panel-course {
+    width: 560px;
+}
+
+#panel-course .pc-left {
+    float: left;
+    width: 120px;
+}
+
+#panel-course .pc-right {
+    float: left;
+    overflow: auto;
+}
+
+#panel-course .pc-right ul li b {
+    display: block;
+    clear: both;
+}
+
+#panel-course .pc-left button {
+    display: block;
+    clear: both;
+}
+
+#panel-course .pc-btmbtns {
+
+    clear: both;
+}
+

@@ -1,0 +1,54 @@
+{include file="public/page_head.html"}
+<div class="easyui-tabs" data-options="fit:true,border:false">
+  <div title="{$html_title}" style="padding:20px;overflow:auto;">
+    <div style="margin-top:5px;">
+      <form method="post" action="?act=admin_user&st=user_addAction" id="websit_config">
+        <div id="stypestate" style="">
+          <h2 class="h1">用户基本信息</h2>
+          <div class="admin_table mb10">
+            <table width="100%" cellspacing="0" cellpadding="0">
+              <tr class="tr1 vt">
+                <td class="td1">用戶名</td>
+                <td class="td2"><input name="user_name" class="easyui-validatebox input_wb input" id="user_name" maxlength="20" data-options="required:true,validType:'length[1,20]'" /></td>
+                <td class="td2"><div class="help_a" style="display: block;"> 填写用戶名，字符和数字组成</div></td>
+              </tr>
+              <tr class="tr1 vt">
+                <td class="td1">密码</td>
+                <td class="td2"><input name="user_password" type="password" class="easyui-validatebox input_wb input" id="user_password" maxlength="20" data-options="required:true,validType:'length[1,20]'" /></td>
+                <td class="td2"><div class="help_a" style="display: block;"> 用户密码</div></td>
+              </tr>
+              <tr class="tr1 vt">
+                <td class="td1">全名</td>
+                <td class="td2"><input name="user_fullname" class="easyui-validatebox input_wb input" id="user_fullname" maxlength="10" data-options="required:true,validType:'length[1,20]'" /></td>
+                <td class="td2"><div class="help_a" style="display: block;"> 用户姓名</div></td>
+              </tr>
+              <tr class="tr1 vt">
+                <td class="td1">是否为管理员</td>
+                <td class="td2"><input name="admin_flag" type="radio" value="0" checked="checked" />
+                  否
+                  <input name="admin_flag" type="radio" value="1" />
+                  是 </td>
+                <td class="td2"><div class="help_a" style="display: block;"> 是否设置成管理员，默认为否</div></td>
+              </tr>
+              <tr class="tr1 vt">
+                <td class="td1">Email</td>
+                <td class="td2"><input name="user_email" class="easyui-validatebox input_wb input" id="user_email" maxlength="50" data-options="required:true,validType:'email'" /></td>
+                <td class="td2"><div class="help_a" style="display: block;"> 填写用户邮箱地址</div></td>
+              </tr>
+              <tr class="tr1 vt">
+                <td class="td1">移动电话</td>
+                <td class="td2"><input name="user_mobilenum" class="easyui-validatebox input_wb input" id="user_mobilenum" maxlength="20" data-options="required:true,validType:'length[1,20]'" /></td>
+                <td class="td2"><div class="help_a" style="display: block;">
+                    <p>手机号 </p>
+                  </div></td>
+              </tr>
+            </table>
+          </div>
+          <div class="tac mb10"> <span class="btn" id="submit"><span> <a href="#" class="easyui-linkbutton" data-options="plain:true,iconCls:'icon-save'">递交</a> </span></span> </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+{insert_scripts files="../../files/admin/js/user/user_add.js"}
+{include file="public/page_foot.html"}

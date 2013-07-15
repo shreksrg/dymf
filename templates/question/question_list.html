@@ -1,0 +1,102 @@
+{include file="public/page_head.html"}
+<link href="../../files/css/article.css" rel="stylesheet" type="text/css" />
+<div class='body'>
+	<div class="body_back">
+		<!--<div class="banner_no1" style="text-align:right;">
+			<div>
+				<a href="./">首页</a> | <a href="{$CONTACT_US_URL}">联系我们</a>
+			</div>
+		</div>-->
+		<div style="background-color:#0169be">
+			<table width="100%" border="0" cellspacing="0" cellpadding="0">
+				<tr>
+					<td width="737" valign="top">
+					<div class='left_top'>
+						首页 > <a href="./">{$webname}</a> > {$status}
+					</div>
+					<div class="left_body">
+						<div class="left_inner" style=" text-align:left;">
+							<ul style="padding-top:5px;">
+								{foreach from=$data item=value}
+								<li class="part_art_li">
+									{if $value.status eq 1}
+									<a href="?act=question&st=question_info&id={$value.id}">{$value.ask}</a>
+									{else}
+									{$value.ask}
+									{/if}
+								</li>
+								{/foreach}
+							</ul>
+						</div>
+					</div></td>
+					<td valign="top"><div class="cj_right_top"></div>
+					<div class="cj_right_body">
+						<table class="art_right_table" width="100%" border="0" cellspacing="0" cellpadding="0">
+							<tr>
+								<td class="top">
+								<div>
+									学修指南
+								</div></td>
+							</tr>
+							<tr>
+								<td valign="top">
+								<div class="art_ll_list">
+									<ul>
+										{foreach from=$xxzndata item=value}
+										<li>
+											<a href="{$defaultA}&id={$value.article_id}">{$value.article_title}</a>
+										</li>
+										{/foreach}
+									</ul>
+								</div></td>
+							</tr>
+						</table>
+						<table class="art_right_table" width="100%" border="0" cellspacing="0" cellpadding="0">
+							<tr>
+								<td class="top">
+								<div>
+									学修动态
+								</div></td>
+							</tr>
+							<tr>
+								<td valign="top">
+								<div class="art_ll_list">
+									<ul>
+										{foreach from=$xxdtdata item=value}
+										<li>
+											<a href="{$defaultA}&id={$value.article_id}">{$value.article_title}</a>
+										</li>
+										{/foreach}
+									</ul>
+								</div></td>
+							</tr>
+						</table>
+						<table class="art_right_table" width="100%" border="0" cellspacing="0" cellpadding="0">
+							<tr>
+								<td class="top">
+								<div>
+									讲堂资讯
+								</div></td>
+							</tr>
+							<tr>
+								<td valign="top">
+								<div class="art_ll_list">
+									<ul>
+										{foreach from=$jtzxdata item=value}
+										<li>
+											<a href="{$defaultA}&id={$value.article_id}">{$value.article_title}</a>
+										</li>
+										{/foreach}
+									</ul>
+								</div></td>
+							</tr>
+						</table>
+					</div></td>
+				</tr>
+			</table>
+		</div>
+		<div class="part_banner_no1"></div>
+		{include file="public/page_foot1.html"}
+	</div>
+	{insert_scripts files="../files/js/article.js"}
+	{include file="public/page_foot.html"}

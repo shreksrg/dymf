@@ -1,0 +1,305 @@
+{include file="public/convert_head.html"}
+<div style="border: #E1A101 solid 10px; padding:100px; background-color:#FFF;">
+<form method="post" action="{$acitonURL}" id="websit_config">
+<input type="hidden" name="id" value="{$cid}" />
+	<table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+		<tr>
+			<td width="20%" align="right" valign="middle">基础信息：&nbsp;&nbsp; </td>
+			<td>
+			<table>
+				<tr>
+					<td width="150"  height="50">姓名：
+					<input name="c_name" type="text" size="5" class="easyui-validatebox defaulttext combo" data-options="required:true,validType:'length[1,5]'" maxlength="10" />
+					</td>
+					<td  width="150" >性别：
+					<select name="c_sex" class="easyui-combobox" style="width:40px">
+						<option value="0">女</option>
+						<option value="1">男</option>
+					</select>
+					</td>
+					<td width="150">籍贯：
+					<input name="c_home" type="text" size="5" maxlength="10"  class="easyui-validatebox defaulttext combo" data-options="required:true,validType:'length[1,5]'" />
+					</td>
+					<td>生日：
+					<input name="c_birth" type="text" class="easyui-datebox" editable="0" value="{$nowdate}"  />
+					</td>
+				</tr>
+				<tr>
+					<td width="150" height="50">职业：
+					<input name="c_prof" type="text" size="5" maxlength="10"  class="easyui-validatebox defaulttext combo" data-options="required:true,validType:'length[1,10]'" />
+					</td>
+					<td  width="150" >QQ号：
+					<input name="c_qq" type="text" size="20" maxlength="20"  class="easyui-validatebox defaulttext combo" data-options="required:true,validType:'length[1,20]'" />
+					</td>
+					<td width="150">UC号：
+					<input name="c_uc" type="text"  class="easyui-validatebox defaulttext combo" data-options="required:true,validType:'length[1,20]'" />
+					</td>
+					<td>电话：
+					<input name="c_tel" type="text"  class="easyui-validatebox defaulttext combo" data-options="required:true,validType:'length[1,20]'" />
+					</td>
+				</tr>
+			</table></td>
+		</tr>
+		<tr>
+			<td width="20%" valign="middle" align="right">寄证信息：&nbsp;&nbsp; </td>
+			<td><br />
+			<table>
+				<tr>
+					<td height="20" colspan="2">寄证地址：</td>
+				</tr>
+				<tr>
+					<td width="400" height="50">收件人：<input name="addressee" type="text"   class="easyui-validatebox defaulttext combo" data-options="required:true,validType:'length[1,50]'" style="width:300px;" /></td>
+					<td>邮编：<input name="zip_code" type="text"   class="easyui-validatebox defaulttext combo" data-options="required:true,validType:'length[1,6]'" /></td>
+				</tr>
+			</table></td>
+		</tr>
+		<tr>
+			<td width="20%" valign="top" align="right">互动交流：&nbsp;&nbsp; </td>
+			<td>
+			<table class="listtable">
+				<tr valign="top">
+					<td colspan="2">皈依上师三宝的缘由 </td>
+					<td>
+					<table>
+						<tr>
+							<td>您皈依的缘起：</td>
+						</tr>
+						<tr>
+							<td>A、为救度有情而愿解脱、成就，弘法利生。</td><td>
+							<input type="radio" name="reason" value="为救度有情而愿解脱、成就，弘法利生。" />
+							</td>
+						</tr>	
+						<tr>
+							<td>B、希望得到佛菩萨加持，消灾免难，使家庭美满，工作顺利。</td><td>
+							<input type="radio" name="reason"  value="希望得到佛菩萨加持，消灾免难，使家庭美满，工作顺利。" />
+							</td>
+						</tr>
+						<tr>
+							<td>C、为追寻精神上的依托。</td><td>
+							<input type="radio" name="reason"  value="为追寻精神上的依托。" />
+							</td>
+						</tr>
+						<tr>
+							<td>D、对密宗感兴趣，想跟上师结个缘。</td><td>
+							<input type="radio" name="reason"  value="对密宗感兴趣，想跟上师结个缘。" />
+							</td>
+						</tr>
+					</table></td>
+				</tr>
+				<tr>
+					<td colspan="2">皈依信息的来源 </td>
+					<td>
+					<table>
+						<tr>
+							<td>A、大圆满法网站/论坛。</td><td>
+							<input type="radio" name="sources"  value="大圆满法网站/论坛。" />
+							</td>
+						</tr>
+						<tr>
+							<td>B、上师书籍。</td><td>
+							<input type="radio" name="sources"  value="上师书籍。" />
+							</td>
+						</tr>
+						<tr>
+							<td>C、同修道友介绍。</td><td>
+							<input type="radio" name="sources"  value="同修道友介绍。" />
+							</td>
+						</tr>
+						<tr>
+							<td>D、其他来源。</td><td>
+							<input type="text" name="sources"  class="easyui-validatebox defaulttext combo" data-options="	validType:'length[1,30]'" style="width:200px;"  />
+							</td>
+						</tr>
+					</table></td>
+				</tr>
+				<tr>
+					<td colspan="2">您最长用的学修方式是</td>
+					<td>
+					<table>
+						<tr>
+							<td>A、大圆满法网站/论坛。</td><td>
+							<input type="radio" name="school_type"  value="大圆满法网站/论坛。" />
+							</td>
+						</tr>
+						<tr>
+							<td>B、上师书籍。</td><td>
+							<input type="radio" name="school_type"  value="上师书籍。" />
+							</td>
+						</tr>
+						<tr>
+							<td>C、UC讲堂。</td><td>
+							<input type="radio" name="school_type"  value="UC讲堂。" />
+							</td>
+						</tr>
+						<tr>
+							<td>D、小组共修。</td><td>
+							<input type="radio" name="school_type"  value="小组共修。"/>
+							</td>
+						</tr>
+					</table></td>
+				</tr>
+				<tr>
+					<td colspan="2">您的家庭环境</td>
+					<td>
+					<table>
+						<tr>
+							<td>A、全家都学佛，家人之间都是同修道友。</td><td>
+							<input type="radio" name="family"  value="全家都学佛，家人之间都是同修道友。" />
+							</td>
+						</tr>
+						<tr>
+							<td>B、家人信佛但是不学佛，对我学佛不排斥。</td><td>
+							<input type="radio" name="family"  value="家人信佛但是不学佛，对我学佛不排斥。" />
+							</td>
+						</tr>
+						<tr>
+							<td>C、家人不信佛，但是不干涉我学佛。</td><td>
+							<input type="radio" name="family"  value="家人不信佛，但是不干涉我学佛。" />
+							</td>
+						</tr>
+						<tr>
+							<td>D、家人不信佛，也反对我学佛。</td><td>
+							<input type="radio" name="family" value="家人不信佛，也反对我学佛。"/>
+							</td>
+						</tr>
+					</table></td>
+				</tr>
+			</table></td>
+		</tr>
+		<tr>
+			<td align="center" colspan="2">小调查</td>
+		</tr>
+		<tr>
+			<td></td>
+			<td>
+			<table class="listtable">
+				<tr>
+					<td>您皈依的缘起：</td>
+				</tr>
+				<tr>
+					<td>A、为救度有情而愿解脱、成就，弘法利生。</td><td>
+					<input type="radio" name="origin"  value="为救度有情而愿解脱、成就，弘法利生。" />
+					</td>
+				</tr>
+				<tr>
+					<td>B、希望得到佛菩萨加持，消灾免难，使家庭美满，工作顺利。</td><td>
+					<input type="radio" name="origin"  value="希望得到佛菩萨加持，消灾免难，使家庭美满，工作顺利。" />
+					</td>
+				</tr>
+				<tr>
+					<td>C、为追寻精神上的依托。</td><td>
+					<input type="radio" name="origin"  value="为追寻精神上的依托。"/>
+					</td>
+				</tr>
+				<tr>
+					<td>D、对密宗感兴趣，想跟上师结个缘。</td><td>
+					<input type="radio" name="origin"  value="对密宗感兴趣，想跟上师结个缘。"/>
+					</td>
+				</tr>
+				<tr>
+					<td>您学佛的情况：</td>
+				</tr>
+				<tr>
+					<td>A、平时经常听经闻法、看佛书，经常去寺院、道场做佛事，乐于参加佛教活动。</td><td>
+					<input type="radio" name="situation"  value="平时经常听经闻法、看佛书，经常去寺院、道场做佛事，乐于参加佛教活动。" />
+					</td>
+				</tr>
+				<tr>
+					<td>B、平时经常听经闻法、看佛书，在自己家的佛堂做课、修法。</td><td>
+					<input type="radio" name="situation"  value="平时经常听经闻法、看佛书，在自己家的佛堂做课、修法。" />
+					</td>
+				</tr>
+				<tr>
+					<td>C、偶尔听经闻法、看佛书，但是基本不做课、不修法。</td><td>
+					<input type="radio" name="situation"  value="偶尔听经闻法、看佛书，但是基本不做课、不修法。"/>
+					</td>
+				</tr>
+				<tr>
+					<td>D、不听经闻法、不看佛书，有时候去寺院烧香拜佛。</td><td>
+					<input type="radio" name="situation"  value="不听经闻法、不看佛书，有时候去寺院烧香拜佛。"/>
+					</td>
+				</tr>
+				<tr>
+					<td>您学佛的时间：</td>
+				</tr>
+				<tr>
+					<td>A、五年以上，一直不间断学佛修行。</td><td>
+					<input type="radio" name="learning_time"  value="五年以上，一直不间断学佛修行。" />
+					</td>
+				</tr>
+				<tr>
+					<td>B、两年以上，一直不间断学佛修行。</td><td>
+					<input type="radio" name="learning_time"  value="两年以上，一直不间断学佛修行。" />
+					</td>
+				</tr>
+				<tr>
+					<td>C、接触佛教很多年，断断续续地学佛修行。</td><td>
+					<input type="radio" name="learning_time"  value="接触佛教很多年，断断续续地学佛修行。"/>
+					</td>
+				</tr>
+				<tr>
+					<td>D、接触佛教一两年。</td><td>
+					<input type="radio" name="learning_time"  value="接触佛教一两年。"/>
+					</td>
+				</tr>
+				<tr>
+					<td>您的家庭环境</td>
+				</tr>
+				<tr>
+					<td>A、全家都学佛，家人之间都是同修道友。</td><td>
+					<input type="radio" name="family_environment"  value="全家都学佛，家人之间都是同修道友。" />
+					</td>
+				</tr>
+				<tr>
+					<td>B、家人信佛但是不学佛，对我学佛不排斥。</td><td>
+					<input type="radio" name="family_environment"  value="家人信佛但是不学佛，对我学佛不排斥。" />
+					</td>
+				</tr>
+				<tr>
+					<td>C、家人不信佛，但是不干涉我学佛。</td><td>
+					<input type="radio" name="family_environment"  value="家人不信佛，但是不干涉我学佛。"/>
+					</td>
+				</tr>
+				<tr>
+					<td>D、家人不信佛，也反对我学佛。</td><td>
+					<input type="radio" name="family_environment"  value="家人不信佛，也反对我学佛。"/>
+					</td>
+				</tr>
+				<tr>
+					<td>您的饮食习惯：
+					</td>
+				</tr>
+				<tr>
+					<td>A、素食，滴酒不沾。</td><td>
+					<input type="radio" name="eating_habits"  value="素食，滴酒不沾。" />
+					</td>
+				</tr>
+				<tr>
+					<td>B、素食，工作应酬时喝一点酒。</td><td>
+					<input type="radio" name="eating_habits"  value="素食，工作应酬时喝一点酒。" />
+					</td>
+				</tr>
+				<tr>
+					<td>C、吃肉、喝酒，但不杀生。</td><td>
+					<input type="radio" name="eating_habits"  value="吃肉、喝酒，但不杀生。"/>
+					</td>
+				</tr>
+				<tr>
+					<td>D、吃肉、喝酒，也不介意杀生。</td><td>
+					<input type="radio" name="eating_habits"  value="吃肉、喝酒，也不介意杀生。"/>
+					</td>
+				</tr>
+			</table></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td>
+            <br /><br /><br />
+			<input type="submit" value="提  交" style="width: 60px" />
+			</td>
+		</tr>
+	</table>
+</form>
+</div>
+{insert_scripts files="../files/js/comm/convert_edit_info.js"}
+{include file="public/convert_foot.html"}

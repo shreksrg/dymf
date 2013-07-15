@@ -1,0 +1,39 @@
+{include file="public/page_head.html"}
+<link href="../../files/css/part.css" rel="stylesheet" type="text/css" />
+<div class='body'>
+<div class="body_back">
+  <div class="banner_no1" style="text-align:right;">
+      <div class="bread_path_1"><a href="./">首页</a> -> {$webname} -> {$part_name} </div>
+  </div>
+
+  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td valign="top"><div class='cj_top'></div>
+        <div class="cj_body"> {foreach name=outer item=contact from=$info}
+          <table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tr class="show">
+              <td><h1>查看课程 >> {$contact.part_name}</h1></td>
+              <td width="70"> {if $contact.id neq ""} <a href="?act=course&st=showHTML&id={$contact.id}&p_id={$p_id}" style="color:red; font-weight:bolder; text-decoration:none;">更多 >></a> {/if} </td>
+            </tr>
+          </table>
+          <table class="cj_list" width="100%" border="0" cellspacing="0" cellpadding="0">
+            {foreach key=key item=item from=$contact.rows}
+            <tr class="list">
+              <td>{$item.course_title}</td>
+              <td>视频 >> <a href="{$item.video_link}">下载</a></td>
+              <td>音频 >> <a href="{$item.audio_link}">下载</a></td>
+              <td>文件 >> <a href="{$item.doc_link}">下载</a></td>
+              <td width="80" align="right">在线播放 >></td>
+              <td width="40" align="left"><a href="{$item.online_link}"><img src="../files/images/part_r5_c7.jpg" /></a></td>
+            </tr>
+            {/foreach}
+          </table>
+          <br/>
+          {/foreach} </div>
+        <div class='cj_foot'></div></td>
+      <td valign="top"><div class="cj_right_top"> {$remark} </div></td>
+    </tr>
+  </table>
+  <div class="part_banner_no1"></div>
+  {include file="public/page_foot1.html"} </div>
+{include file="public/page_foot.html"} 

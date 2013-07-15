@@ -1,0 +1,20 @@
+{include file="public/page_head.html"}
+<div class="easyui-tabs" data-options="fit:true,border:false">
+	<div title="{$html_title}" style="padding:20px;overflow:auto;">
+		<div style="margin-top:5px;">
+			<form method="post" action="" id="websit_config">
+				<div id="stypestate" style="">
+					<h2 class="h1">{$html_title}</h2>
+					<div class="admin_table mb10">
+						<input id="p_id" value="{$p_id}" type="hidden" />
+						<input id="num" value="{$num}" type="hidden" />
+						<input id="p_show" value="{$show}" type="hidden" />
+						<table id="course_list_table"></table>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+{insert_scripts files="../../files/admin/js/course/class_list.js"}
+{include file="public/page_foot.html"}

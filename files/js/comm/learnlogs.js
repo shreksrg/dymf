@@ -22,9 +22,10 @@ function serializeCountData() {
  * @return Array 统计项数组
  */
 function setSubmitData() {
-    var stuid = $('input[name=stuid]').val();
+    // var stuid = $('input[name=stuid]').val();
     var stats = serializeCountData();
-    var data = {'clscode': clsCode, 'stats': stats }
+    var data = {'clscode': clsCode, 'stats': stats, 'year': $('[name=xx_year]').val(), 'month': $('[name=xx_month]').val()}
+
     return data;
 }
 

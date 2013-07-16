@@ -15,9 +15,7 @@
         </div>
         <div class="famous_saying" id="ssjy_con"><?php echo $this->_var['ssjy']['msg']; ?></div>
         <a actionid="<?php echo $this->_var['ssjy']['id']; ?>" id="ssjy_next_action" class="next_saying" href="#" sync="0"> 下一篇</a>
-
     </div>
-
 </div>
 <div class="body_back">
 <div class="banner_no1">
@@ -240,6 +238,89 @@
             </ul>
 
             <button name="btn-writeCLogs">填写本月学修记录</button>
+
+            
+            <div id="winWriteCLogs" style="display: none">
+                
+                <?php if ($this->_var['role'] == g0): ?>
+                <div id="panel-course">
+                    <div class="pc-top">
+                        <span>学号:<?php echo $this->_var['stuno']; ?></span>
+                        <span>法号:<?php echo $this->_var['buddhist']; ?></span>
+                        <span>
+                            <select name="xx_year">
+                                <option value="2008">2008</option>
+                                <option value="2009">2009</option>
+                                <option value="2010">2010</option>
+                                <option value="2011">2011</option>
+                                <option value="2012">2012</option>
+                                <option value="2013">2013</option>
+                            </select>
+                            <select name="xx_month">
+                                <option value="1">01</option>
+                                <option value="2">02</option>
+                                <option value="3">03</option>
+                                <option value="4">04</option>
+                                <option value="5">05</option>
+                                <option value="6">06</option>
+                                <option value="7">07</option>
+                                <option value="8">08</option>
+                                <option value="9">09</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                            </select>
+                        </span>
+                    </div>
+                    <div class="pc-left">
+                        <button name='btnWS'>闻思班</button>
+                        <button name='btnJT'>净土班</button>
+                        <button name='btnJX'>加行班</button>
+                    </div>
+                    <div id="countFormer"></div>
+                </div>
+                <?php else: ?>
+                
+                <div id="panel-course">
+                    <div class="pc-top">
+                        <span>学号:<input type="text"/></span>
+                        <span>法号:<input type="text"/></span>
+                        <span>
+                            <select name="xx_year">
+                                <option value="2008">2008</option>
+                                <option value="2009">2009</option>
+                                <option value="2010">2010</option>
+                                <option value="2011">2011</option>
+                                <option value="2012">2012</option>
+                                <option value="2013">2013</option>
+                            </select>
+                            <select name="xx_month">
+                                <option value="1">01</option>
+                                <option value="2">02</option>
+                                <option value="3">03</option>
+                                <option value="4">04</option>
+                                <option value="5">05</option>
+                                <option value="6">06</option>
+                                <option value="7">07</option>
+                                <option value="8">08</option>
+                                <option value="9">09</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                            </select>
+                        </span>
+                    </div>
+                    <div class="pc-left">
+                        <button name='btnWS'>闻思班</button>
+                        <button name='btnJT'>净土班</button>
+                        <button name='btnJX'>加行班</button>
+                    </div>
+                    <div id="countFormer"></div>
+                </div>
+                <?php endif; ?>
+            </div>
+
+
             <?php else: ?>
             <form id='frmUserLogin' action="?act=index&st=userLogin" method="post">
                 <ul>
@@ -618,21 +699,7 @@ if ($this->_foreach['outer']['total'] > 0):
     </div>
 </div>
 
-<div id="winWriteCLogs">
 
-    <div id="panel-course">
-        <div class="pc-left">
-            <button name='btnWS'>闻思班</button>
-            <button name='btnJT'>净土班</button>
-            <button name='btnJX'>加行班</button>
-        </div>
-
-        <div id="countFormer">
-
-        </div>
-
-    </div>
-</div>
 <script type="text/javascript" src="files/js/fancybox/jquery.mousewheel-3.0.4.pack.js"></script>
 <script type="text/javascript" src="files/js/fancybox/jquery.fancybox-1.3.4.pack.js"></script>
 <link rel="stylesheet" type="text/css" href="files/js/fancybox/jquery.fancybox-1.3.4.css" media="screen"/>

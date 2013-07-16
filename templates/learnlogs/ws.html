@@ -1,7 +1,3 @@
-<script>
-
-
-</script>
 
 <form id="frmLearner" action="/?c=LearnLogs&st=SubmitLearnLogs" method="post">
     <div class="pc-right">

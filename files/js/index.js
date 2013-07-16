@@ -130,11 +130,14 @@ $(function () {
 
 
     $('[name=btn-writeCLogs]').click(function () {
+
         $('#winWriteCLogs').window({
             width: 600,
             height: 400,
             modal: true
         });
+
+        $('#winWriteCLogs').show();
     })
 })
 

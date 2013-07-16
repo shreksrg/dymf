@@ -11,12 +11,10 @@ class Act_LearnLogs extends Ctrl_Components_Controller
 
     public function actionTest()
     {
-        if (!$this->isGuest()) {
-            echo "请登录";
-            return false;
-        }
-        $this->render('test.html', array('list' => array('shrek', 'jermyn')));
-        $this->userLogout();
+        //echo $this->filterLearnDate($_POST['year'], $_POST['month']);
+        $model = new model_trainee();
+        $data = array('stuno' => 'xj-009', 'buddhist' => '杨帆金尼', 'squadid' => 5);
+        var_dump($model->addTrainee($data));
     }
 
 
@@ -25,26 +23,75 @@ class Act_LearnLogs extends Ctrl_Components_Controller
         $model = new model_test();
         $date = strtotime(date('Y-m'));
         $r = $model->inspectLogExists($date);
-
         echo $this->smarty->fetch('test.html');
-        // var_dump($r);
     }
-
 
     /**
-     * 检查学员日志当月是否提交
+     * 过滤提交的记录时间
      *
      */
-
-    private function inspectLearnLogs($date)
+    public function  filterLearnDate($year, $month)
     {
-        $model = new model_learnOrganization();
-        try {
-            $model->inspect($date);
-        } catch (Exception $e) {
-            base_cmshop::admin_msg("数据查询异常,请联系管理员！");
-        }
+        // 验证年份
+        if (isset($year)) {
+            $year = (int)$month;
+            if ($year < 2000 || $year > (int)date('Y'))
+                $year = date('Y');
+        } else
+            $year = date('Y');
+
+        // 验证月份
+        if (isset($month)) {
+            $month = (int)$month;
+            if ($month < 1 || $month > 12)
+                $month = date('n'); //月份不补零
+        } else
+            $month = date('n');
+        return $curMonth = strtotime("$year-$month");
     }
+
+    /**
+     * 学修组长提交学员学修记录
+     *
+     */
+    public function actionCommitLearnLogs()
+    {
+        //根据学号和法号获取学员id
+        // $stuno = $_POST['stuno'];
+        // $buddhist = $_POST['buddhist'];
+        $stuno = 's009s';
+        $buddhist = '研发及尼';
+        $squadid = 1;
+        $clsCode = 'ws';
+        $model = new model_trainee();
+        $row = $model->findByAttribute('stuno=:stuno and buddhist=:buddhist', array('stuno' => $stuno, 'buddhist' => $buddhist));
+        if ($row) {
+            $stuId = $row['id'];
+        } else {
+            //增加学员
+            $data = array('stuno' => $stuno, 'buddhist' => $buddhist, 'squadid' => $squadid);
+            $stuId = $model->addTrainee($data);
+        }
+
+        //获取学修记录时间
+        $curMonth = $this->filterLearnDate($_POST['year'], $_POST['month']);
+
+        //增加学修记录
+        $modelOrg = new model_learnOrganization();
+        $org = array('stuid' => $stuId, 'clscode' => $clsCode, 'squadid' => $squadid, 'learn_date' => $curMonth);
+        isset($_POST['stats']) ? $stats = $_POST['stats'] : $this->responseJsonMsg(1, '未知的统计项');
+        $result = $modelOrg->addLearnLogs($org, $stats);
+        if ($result === true) {
+            $errCode = 0;
+            $message = '提交成功';
+        } else {
+            $errCode = 1;
+            $message = $result;
+        }
+        $this->responseJsonMsg($errCode, $message);
+
+    }
+
 
     /**
      * 个人学员提交学修记录
@@ -55,8 +102,10 @@ class Act_LearnLogs extends Ctrl_Components_Controller
         if ($this->isGuest())
             $this->responseJsonMsg(1, '登录超时');
 
+        //获取学修记录时间
+        $curMonth = $this->filterLearnDate($_POST['year'], $_POST['month']);
+
         // 判断当月记录是否已经录入
-        $curMonth = strtotime('2013-04');
         $modelOrg = new model_learnOrganization();
         try {
             $r = $modelOrg->inspectLogExists($curMonth);
@@ -80,7 +129,6 @@ class Act_LearnLogs extends Ctrl_Components_Controller
         $squadid = $trainee['squadid'];
 
         $org = array('stuid' => $stuId, 'clscode' => $clsCode, 'squadid' => $squadid, 'learn_date' => $curMonth);
-
         isset($_POST['stats']) ? $stats = $_POST['stats'] : $this->responseJsonMsg(1, '未知的统计项');
 
         #todo 此处请验证统计项编码

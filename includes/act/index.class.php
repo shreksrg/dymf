@@ -103,6 +103,8 @@ class act_index
         base_cmshop::smarty()->assign('wf_top_listt', model_myclass::wf_top());
         base_cmshop::smarty()->assign('gx_top_list', model_myclass::gx_top());
         base_cmshop::smarty()->assign('sx_top_list', model_myclass::sx_top());
+
+        base_cmshop::smarty()->assign('role', 'g1');
         base_cmshop::smarty()->display('index.html');
 
     }

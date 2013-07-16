@@ -59,14 +59,33 @@ class Act_LearnLogs extends Ctrl_Components_Controller
         //根据学号和法号获取学员id
         // $stuno = $_POST['stuno'];
         // $buddhist = $_POST['buddhist'];
+
+        if (!isset($_POST['stuno']))
+            $this->responseJsonMsg(1, '请输入学员编号');
+
+        if (!isset($_POST['buddhist']))
+            $this->responseJsonMsg(1, '请输入法号');
+
+        if (isset($_POST['clscode']) || in_array($_POST['clscode'], $this->clsCodes)) {
+            $this->responseJsonMsg(1, '班级编码不正确');
+        }
+
+        $modelSquad = new model_squad();
+        if (!$modelSquad->filter())
+            $this->responseJsonMsg(1, '班级编码不正确');
+
+
         $stuno = 's009s-009';
         $buddhist = '研发及尼';
         $squadid = 1;
         $clsCode = 'ws';
+
+        //获取学员id;
         $model = new model_trainee();
         $row = $model->findByAttribute('stuno=:stuno', array('stuno' => $stuno));
         if ($row) {
             $stuId = $row['id'];
+            $squadid = $row['squadid'];
         } else {
             $pasword = sha1($stuno); //设置新密码
             $data = array('username' => $stuno, 'password' => $pasword, 'stuno' => $stuno, 'buddhist' => $buddhist, 'squadid' => $squadid);

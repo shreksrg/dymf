@@ -183,9 +183,9 @@ var clsCode = null;  //当前选择的学修班编码
  * 加载班级学修统计表单
  * @code String 学修班编码
  */
-function loadCountForm(clsCode) {
+function loadCountForm() {
     var url = "/?c=learnlogs&st=ResponseForm";
-    $.post(url, {'clscode': clsCode}, function (data) {
+    $.post(url, {'clscode': clsCode, 'stuRole': stuRole}, function (data) {
         if (data.err == 0) {
             $('#countFormer').empty().append(data['content']);
         } else {
@@ -197,17 +197,17 @@ function loadCountForm(clsCode) {
 
 $('button[name=btnWS]').click(function () {
     clsCode = 'ws'
-    loadCountForm(clsCode);
+    loadCountForm();
 })
 
 $('button[name=btnJT]').click(function () {
     clsCode = 'jt';
-    loadCountForm(clsCode);
+    loadCountForm();
 })
 
 $('button[name=btnJX]').click(function () {
     clsCode = 'jx';
-    loadCountForm(clsCode);
+    loadCountForm();
 })
 
 

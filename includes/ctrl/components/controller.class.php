@@ -15,8 +15,5 @@ class Ctrl_Components_Controller extends Ctrl_CController
     }
 
 
-    public function getUserId()
-    {
-        return $_SESSION['stuid'];
-    }
+
 }

@@ -2,6 +2,9 @@
 class Act_LearnLogs extends Ctrl_Components_Controller
 {
     private $clsCodes = array('ws', 'jt', 'jx');
+    private $squadType = array('g0', 'g1');
+
+    private $modelOrg;
 
     public function __construct()
     {
@@ -60,20 +63,19 @@ class Act_LearnLogs extends Ctrl_Components_Controller
         // $stuno = $_POST['stuno'];
         // $buddhist = $_POST['buddhist'];
 
-        if (!isset($_POST['stuno']))
-            $this->responseJsonMsg(1, '请输入学员编号');
+        /*if (!(isset($_POST['stuno']) && strlen($_POST['stuno']) == 0))
+            $this->responseJsonMsg(1, '请输入学号');
 
-        if (!isset($_POST['buddhist']))
+        if (!isset($_POST['buddhist']) && strlen($_POST['buddhist']))
             $this->responseJsonMsg(1, '请输入法号');
 
-        if (isset($_POST['clscode']) || in_array($_POST['clscode'], $this->clsCodes)) {
+        if (!(isset($_POST['clscode']) && in_array($_POST['clscode'], $this->clsCodes))) {
             $this->responseJsonMsg(1, '班级编码不正确');
-        }
+        }*/
 
-        $modelSquad = new model_squad();
-        if (!$modelSquad->filter())
-            $this->responseJsonMsg(1, '班级编码不正确');
-
+        /* $modelSquad = new model_squad();
+         if (!$modelSquad->filter())
+             $this->responseJsonMsg(1, '班级编码不正确');*/
 
         $stuno = 's009s-009';
         $buddhist = '研发及尼';
@@ -92,25 +94,18 @@ class Act_LearnLogs extends Ctrl_Components_Controller
             $stuId = $model->addTrainee($data);
         }
 
-        //获取学修记录时间
+        $modelOrg = new model_learnOrganization();
+
+        //检查当月是否已录入学修记录
         $curMonth = $this->filterLearnDate($_POST['year'], $_POST['month']);
+        $this->chkLogsExists($modelOrg, $curMonth);
 
         //增加学修记录
-        $modelOrg = new model_learnOrganization();
+
         $org = array('stuid' => $stuId, 'clscode' => $clsCode, 'squadid' => $squadid, 'learn_date' => $curMonth);
-
         isset($_POST['stats']) ? $stats = $_POST['stats'] : $this->responseJsonMsg(1, 'unknown stat items');
-        $result = $modelOrg->addLearnLogs($org, $stats);
-        if ($result === true) {
-            $errCode = 0;
-            $message = '提交成功';
-        } else {
-            $errCode = 1;
-            $message = $result;
-        }
-        $this->responseJsonMsg($errCode, $message);
+        $this->newLearnLogs($modelOrg, $org, $stats);
     }
-
 
     /**
      * 个人学员提交学修记录
@@ -121,26 +116,19 @@ class Act_LearnLogs extends Ctrl_Components_Controller
         if ($this->isGuest())
             $this->responseJsonMsg(1, '登录超时');
 
-        //获取学修记录时间
-        $curMonth = $this->filterLearnDate($_POST['year'], $_POST['month']);
+        $modelOrg = new model_learnOrganization();
 
         // 判断当月记录是否已经录入
-        $modelOrg = new model_learnOrganization();
-        try {
-            $r = $modelOrg->inspectLogExists($curMonth);
-            if ($r)
-                $this->responseJsonMsg(1, '当月学修记录已提交，不能重复提交');
-        } catch (Exception $e) {
-            $this->responseJsonMsg(1, '操作异常,请重新再试');
-        }
+        $curMonth = $this->filterLearnDate($_POST['year'], $_POST['month']);
+        $this->chkLogsExists($modelOrg, $curMonth);
 
-        // 统计项登记入库
-        $stuId = $_SESSION['trainee_id'];
 
         //验证班级编码
         $clsCode = $_POST['clscode']; //班级编码
         if (!in_array($clsCode, $this->clsCodes))
             $this->responseJsonMsg(1, '错误的班级编码');
+
+        $stuId = $this->getSession('trainee_id');
 
         //获取学员小组id
         $modelTrainee = new model_trainee();
@@ -148,10 +136,16 @@ class Act_LearnLogs extends Ctrl_Components_Controller
         $squadid = $trainee['squadid'];
 
         $org = array('stuid' => $stuId, 'clscode' => $clsCode, 'squadid' => $squadid, 'learn_date' => $curMonth);
-        isset($_POST['stats']) ? $stats = $_POST['stats'] : $this->responseJsonMsg(1, '未知的统计项');
+        isset($_POST['stats']) && is_array($_POST['stats']) ? $stats = $_POST['stats'] : $this->responseJsonMsg(1, '未知的统计项');
 
         #todo 此处请验证统计项编码
 
+        //增加当月学修记录
+        $this->newLearnLogs($modelOrg, $org, $stats);
+    }
+
+    protected function newLearnLogs(model_learnOrganization $modelOrg, $org, $stats)
+    {
         $result = $modelOrg->addLearnLogs($org, $stats);
         if ($result === true) {
             $errCode = 0;
@@ -164,7 +158,7 @@ class Act_LearnLogs extends Ctrl_Components_Controller
     }
 
     /**
-     * 输出学修班统计项表单
+     * 请求响应学修班统计项表单
      *
      */
     public function actionResponseForm()
@@ -173,14 +167,13 @@ class Act_LearnLogs extends Ctrl_Components_Controller
             $this->responseJsonMsg(1, '登录超时，请重新登录');
         }
 
-        if (isset($_POST['clscode'])) {
-            $code = $_POST['clscode'];
-            if (!in_array($code, $this->clsCodes)) {
-                $this->responseJsonMsg(1, '错误的班级编码');
-            }
-            $this->responseJsonMsg(0, $this->render("learnlogs/$code.html", array('rows' => 'shrek'), false));
-        }
-        $this->responseJsonMsg(1, '请选择学修班');
+        #todo 验证$_POST
+
+        $clsCode = $_POST['clscode'];
+        $stuRole = $_POST['stuRole'];
+        $frmAction = $stuRole == 'g0' ? 'SubmitLearnLogs' : 'CommitLearnLogs';
+        $this->responseJsonMsg(0, $this->render("learnlogs/{$clsCode}.html", array('action' => $frmAction), false));
+        // $this->responseJsonMsg(1, '请选择学修班');
     }
 
     /**
@@ -193,6 +186,25 @@ class Act_LearnLogs extends Ctrl_Components_Controller
             $model = new model_learnOrganization();
             $rows = $model->getClassStatsForSum($_SESSION['trainee_id'], $_POST['clscode']);
             echo json_encode($rows);
+        }
+    }
+
+
+    /**
+     * 检查当月学修记录是否提交
+     *
+     * @param int $curMonth
+     */
+    protected function chkLogsExists(model_learnOrganization $modelOrg, $curMonth)
+    {
+        // 判断当月记录是否已经录入
+        //  $modelOrg = new model_learnOrganization();
+        try {
+            $r = $modelOrg->inspectLogExists($this->getSession('trainee_id'), $curMonth);
+            if ($r)
+                $this->responseJsonMsg(1, '当月学修记录已提交，不能重复提交');
+        } catch (Exception $e) {
+            $this->responseJsonMsg(1, '操作异常,请重新再试');
         }
     }
 }

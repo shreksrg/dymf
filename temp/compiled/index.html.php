@@ -7,10 +7,10 @@
         <div class="title_right">上师教言</div>
         <div class="menu_list">
             <ul>
-                <li><a href="?act=volunteer&st=showHTML">义工报名</a></li>
                 <li><a href="??act=convert&st=showHTML">皈依入学</a></li>
                 <li><a href="?act=part&st=showHTML&pid=30">学修指南</a></li>
                 <li><a href="?act=selfexamination&st=showHTML">戒律自查</a></li>
+                <li><a href="?act=volunteer&st=showHTML">义工报名</a></li>
             </ul>
         </div>
         <div class="famous_saying" id="ssjy_con"><?php echo $this->_var['ssjy']['msg']; ?></div>
@@ -240,6 +240,11 @@
             <button name="btn-writeCLogs">填写本月学修记录</button>
 
             
+            <script type="text/javascript">
+                var stuRole = '<?php echo $this->_var['role']; ?>';
+            </script>
+            
+            
             <div id="winWriteCLogs" style="display: none">
                 
                 <?php if ($this->_var['role'] == g0): ?>
@@ -285,6 +290,12 @@
                     <div class="pc-top">
                         <span>学号:<input type="text"/></span>
                         <span>法号:<input type="text"/></span>
+                        <span>实修组: <select name="sx_squad" id="">
+                            <option value="1">实修组1</option>
+                            <option value="2">实修组2</option>
+                            <option value="3">实修组3</option>
+                        </select>
+                        </span>
                         <span>
                             <select name="xx_year">
                                 <option value="2008">2008</option>

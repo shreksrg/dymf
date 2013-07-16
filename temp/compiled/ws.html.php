@@ -1,5 +1,5 @@
 
-<form id="frmLearner" action="/?c=LearnLogs&st=SubmitLearnLogs" method="post">
+<form id="frmLearner" action="/?c=LearnLogs&st=<?php echo $this->_var['action']; ?>" method="post">
     <div class="pc-right">
         <ul>
             <li>
@@ -16,8 +16,8 @@
 
                 <p cscode='ws002'>
                     <b>每日闻法</b>
-                    <label for="">本月数</label><input citem='mc' type="" value="34"/>
-                    <label for="">累计数</label><input citem='sc' type="" value="0"/>
+                    <label for="">本月数</label><input citem='mc' type="" value=""/>
+                    <label for="">累计数</label><input citem='sc' type="" value=""/>
                 </p>
 
                 <p cscode='ws003'>

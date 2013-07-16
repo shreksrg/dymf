@@ -10,13 +10,13 @@ class model_learnOrganization extends model_base
     }
 
     //检查是否存在当月学修日志
-    public function inspectLogExists($date)
+    public function inspectLogExists($stuId, $date)
     {
         $sql = "select count(1) from  dymf_organization where  stuid=:stuid  and learn_date=:learn_date";
         $pdoStatement = self::DB()->prepare($sql);
-        $return = $pdoStatement->execute(array('stuid' => $_SESSION['trainee_id'], 'learn_date' => $date));
+        $return = $pdoStatement->execute(array('stuid' => $stuId, 'learn_date' => $date));
         if (!$return)
-            throw new Exception('exception');
+            throw new Exception();
         $rows = (int)$pdoStatement->fetchColumn();
         return $rows !== 0;
     }

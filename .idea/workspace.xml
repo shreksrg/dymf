@@ -5,7 +5,7 @@
     <ignored path="dymf.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/index.php" changelist="5f785153-3bbd-4232-bab1-e3970fd6d88b" time="1373683033312" ignored="false" />
-    <file path="/ccontroller.class.php" changelist="5f785153-3bbd-4232-bab1-e3970fd6d88b" time="1373811637961" ignored="false" />
+    <file path="/ccontroller.class.php" changelist="5f785153-3bbd-4232-bab1-e3970fd6d88b" time="1373993263975" ignored="false" />
     <file path="$PROJECT_DIR$/../kingmall/eccore/ecmall.php" changelist="5f785153-3bbd-4232-bab1-e3970fd6d88b" time="1373680849328" ignored="false" />
     <file path="$PROJECT_DIR$/../kingmall/eccore/model/mysql.php" changelist="5f785153-3bbd-4232-bab1-e3970fd6d88b" time="1373682082281" ignored="false" />
     <file path="/controller.php" changelist="5f785153-3bbd-4232-bab1-e3970fd6d88b" time="1373684933468" ignored="false" />
@@ -14,17 +14,17 @@
     <file path="/test.html" changelist="5f785153-3bbd-4232-bab1-e3970fd6d88b" time="1373684583750" ignored="false" />
     <file path="/learnOrgization.class.php" changelist="5f785153-3bbd-4232-bab1-e3970fd6d88b" time="1373817488824" ignored="false" />
     <file path="/eqauls.php" changelist="5f785153-3bbd-4232-bab1-e3970fd6d88b" time="1373694954468" ignored="false" />
-    <file path="/index.html" changelist="5f785153-3bbd-4232-bab1-e3970fd6d88b" time="1373941017484" ignored="false" />
-    <file path="/index.js" changelist="5f785153-3bbd-4232-bab1-e3970fd6d88b" time="1373938406390" ignored="false" />
-    <file path="$PROJECT_DIR$/temp/compiled/index.html.php" changelist="5f785153-3bbd-4232-bab1-e3970fd6d88b" time="1373940552562" ignored="false" />
+    <file path="/index.html" changelist="5f785153-3bbd-4232-bab1-e3970fd6d88b" time="1373992112924" ignored="false" />
+    <file path="/index.js" changelist="5f785153-3bbd-4232-bab1-e3970fd6d88b" time="1373992362319" ignored="false" />
+    <file path="$PROJECT_DIR$/temp/compiled/index.html.php" changelist="5f785153-3bbd-4232-bab1-e3970fd6d88b" time="1373992490049" ignored="false" />
     <file path="/index.css" changelist="5f785153-3bbd-4232-bab1-e3970fd6d88b" time="1373791821974" ignored="false" />
-    <file path="/learnlogs.class.php" changelist="5f785153-3bbd-4232-bab1-e3970fd6d88b" time="1373951638296" ignored="false" />
-    <file path="/ws.html" changelist="5f785153-3bbd-4232-bab1-e3970fd6d88b" time="1373903758480" ignored="false" />
+    <file path="/learnlogs.class.php" changelist="5f785153-3bbd-4232-bab1-e3970fd6d88b" time="1373994278207" ignored="false" />
+    <file path="/ws.html" changelist="5f785153-3bbd-4232-bab1-e3970fd6d88b" time="1373989848195" ignored="false" />
     <file path="/learnlogs.js" changelist="5f785153-3bbd-4232-bab1-e3970fd6d88b" time="1373940173375" ignored="false" />
-    <file path="/controller.class.php" changelist="5f785153-3bbd-4232-bab1-e3970fd6d88b" time="1373815794699" ignored="false" />
+    <file path="/controller.class.php" changelist="5f785153-3bbd-4232-bab1-e3970fd6d88b" time="1373993227141" ignored="false" />
     <file path="/trainee.class.php" changelist="5f785153-3bbd-4232-bab1-e3970fd6d88b" time="1373947093578" ignored="false" />
     <file path="/index.class.php" changelist="5f785153-3bbd-4232-bab1-e3970fd6d88b" time="1373940957468" ignored="false" />
-    <file path="/learnorganization.class.php" changelist="5f785153-3bbd-4232-bab1-e3970fd6d88b" time="1373900473106" ignored="false" />
+    <file path="/learnorganization.class.php" changelist="5f785153-3bbd-4232-bab1-e3970fd6d88b" time="1373993433453" ignored="false" />
     <file path="$PROJECT_DIR$/temp/compiled/ws.html.php" changelist="5f785153-3bbd-4232-bab1-e3970fd6d88b" time="1373903834738" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -48,23 +48,8 @@
       <file leaf-file-name="learnlogs.class.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/includes/act/learnlogs.class.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="73" column="33" selection-start="1923" selection-end="1923" vertical-scroll-proportion="0.12948208">
+            <state line="50" column="14" selection-start="1299" selection-end="1299" vertical-scroll-proportion="0.76908755">
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="268" column="40" selection-start="12106" selection-end="12106" vertical-scroll-proportion="-2.2692308">
-              <folding>
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#td#0;n#tr#0;n#table#2;n#div#1;n#div#0;n#!!top" expanded="true" />
-                <element signature="tag#div#0;tag#div#0;tag#div#0;tag#div#0;tag#td#0;tag#tr#0;tag#table#2;tag#div#1;tag#div#0" expanded="false" />
-                <element signature="n#style#0;n#div#1;n#div#2;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#3;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#4;n#div#0;n#!!top" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -72,7 +57,7 @@
       <file leaf-file-name="index.class.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/includes/act/index.class.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="106" column="49" selection-start="3869" selection-end="3869" vertical-scroll-proportion="-13.740741">
+            <state line="106" column="43" selection-start="3859" selection-end="3863" vertical-scroll-proportion="-8.965517">
               <folding />
             </state>
           </provider>
@@ -81,7 +66,7 @@
       <file leaf-file-name="learnlogs.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/files/js/comm/learnlogs.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="26" column="57" selection-start="688" selection-end="692" vertical-scroll-proportion="0.0">
+            <state line="18" column="0" selection-start="479" selection-end="479" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -90,7 +75,7 @@
       <file leaf-file-name="ws.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/learnlogs/ws.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="0" selection-start="177" selection-end="177" vertical-scroll-proportion="-5.111111">
+            <state line="1" column="55" selection-start="56" selection-end="56" vertical-scroll-proportion="-0.8965517">
               <folding />
             </state>
           </provider>
@@ -108,7 +93,7 @@
       <file leaf-file-name="index.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/files/js/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="125" column="11" selection-start="4633" selection-end="4633" vertical-scroll-proportion="-1.2">
+            <state line="179" column="33" selection-start="5616" selection-end="5616" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -117,16 +102,7 @@
       <file leaf-file-name="learnorganization.class.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/includes/model/learnorganization.class.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="36" column="46" selection-start="1255" selection-end="1255" vertical-scroll-proportion="-8.037037">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="trainee.class.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/includes/model/trainee.class.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="71" column="15" selection-start="1913" selection-end="1913" vertical-scroll-proportion="-15.703704">
+            <state line="9" column="5" selection-start="155" selection-end="155" vertical-scroll-proportion="-3.4827585">
               <folding />
             </state>
           </provider>
@@ -143,30 +119,30 @@
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/files/js/template/course.html" />
-        <option value="$PROJECT_DIR$/includes/ctrl/ccontroller.class.php" />
         <option value="$PROJECT_DIR$/includes/act/admin/index.class.php" />
         <option value="$PROJECT_DIR$/includes/act/trainee.class.php" />
-        <option value="$PROJECT_DIR$/includes/ctrl/components/controller.class.php" />
         <option value="$PROJECT_DIR$/includes/model/learnOrgization.class.php" />
-        <option value="$PROJECT_DIR$/includes/model/learnorganization.class.php" />
         <option value="$PROJECT_DIR$/includes/act/test.class.php" />
         <option value="$PROJECT_DIR$/files/js/login.js" />
+        <option value="$PROJECT_DIR$/includes/act/index.class.php" />
+        <option value="$PROJECT_DIR$/includes/model/trainee.class.php" />
         <option value="$PROJECT_DIR$/templates/learnlogs/ws.html" />
+        <option value="$PROJECT_DIR$/templates/index.html" />
         <option value="$PROJECT_DIR$/files/js/index.js" />
         <option value="$PROJECT_DIR$/files/js/comm/learnlogs.js" />
-        <option value="$PROJECT_DIR$/includes/act/index.class.php" />
-        <option value="$PROJECT_DIR$/templates/index.html" />
-        <option value="$PROJECT_DIR$/includes/model/trainee.class.php" />
+        <option value="$PROJECT_DIR$/includes/ctrl/components/controller.class.php" />
+        <option value="$PROJECT_DIR$/includes/ctrl/ccontroller.class.php" />
         <option value="$PROJECT_DIR$/includes/act/learnlogs.class.php" />
+        <option value="$PROJECT_DIR$/includes/model/learnorganization.class.php" />
       </list>
     </option>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="-4" />
-    <option name="y" value="-4" />
-    <option name="width" value="1368" />
-    <option name="height" value="746" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1296" />
+    <option name="height" value="776" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -286,6 +262,24 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="base" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dymf" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dymf" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="includes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="act" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -357,14 +351,14 @@
       <TestRunner />
       <method />
     </configuration>
+    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
+      <method />
+    </configuration>
     <configuration default="true" type="JavascriptDebugSession" factoryName="Local" singleton="true">
       <JSDebuggerConfigurationSettings>
         <option name="engineId" value="embedded" />
         <option name="fileUrl" />
       </JSDebuggerConfigurationSettings>
-      <method />
-    </configuration>
-    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
       <method />
     </configuration>
     <list size="0" />
@@ -399,14 +393,14 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-4" y="-4" width="1368" height="746" extended-state="0" />
+    <frame x="-8" y="-8" width="1296" height="776" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3284553" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26712328" sideWeight="0.67154473" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27147487" sideWeight="0.67154473" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -482,18 +476,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/temp/compiled/ws.html.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="10" selection-start="10" selection-end="10" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/includes/ctrl/test.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="28" selection-start="99" selection-end="99" vertical-scroll-proportion="0.22243714" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/files/js/xheditor/jquery/jquery-1.4.4.src.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="2960" column="0" selection-start="76442" selection-end="76442" vertical-scroll-proportion="0.3327032">
@@ -503,9 +485,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/includes/model/test.class.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="16" selection-start="12" selection-end="22" vertical-scroll-proportion="0.048417132">
-          <folding />
-        </state>
+        <state line="1" column="16" selection-start="12" selection-end="22" vertical-scroll-proportion="0.048417132" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/includes/model/base.class.php">
@@ -517,14 +497,26 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/includes/act/test.class.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="87" column="0" selection-start="2105" selection-end="2105" vertical-scroll-proportion="0.7094972">
-          <folding />
-        </state>
+        <state line="87" column="0" selection-start="2105" selection-end="2105" vertical-scroll-proportion="0.7094972" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/includes/model/admin/article.class.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="20" column="0" selection-start="766" selection-end="766" vertical-scroll-proportion="0.23255815">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/includes/model/trainee.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="71" column="15" selection-start="1913" selection-end="1913" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/learnlogs/ws.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="55" selection-start="56" selection-end="56" vertical-scroll-proportion="-0.8965517">
           <folding />
         </state>
       </provider>
@@ -536,64 +528,60 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/learnlogs/ws.html">
+    <entry file="file://$PROJECT_DIR$/includes/ctrl/components/controller.class.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="0" selection-start="177" selection-end="177" vertical-scroll-proportion="-5.111111">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/files/js/comm/learnlogs.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="57" selection-start="688" selection-end="692" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/includes/act/index.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="106" column="49" selection-start="3869" selection-end="3869" vertical-scroll-proportion="-13.740741">
+        <state line="1" column="49" selection-start="55" selection-end="55" vertical-scroll-proportion="0.048417132">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/files/js/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="125" column="11" selection-start="4633" selection-end="4633" vertical-scroll-proportion="-1.2">
+        <state line="179" column="33" selection-start="5616" selection-end="5616" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/includes/model/learnorganization.class.php">
+    <entry file="file://$PROJECT_DIR$/files/js/comm/learnlogs.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="46" selection-start="1255" selection-end="1255" vertical-scroll-proportion="-8.037037">
+        <state line="18" column="0" selection-start="479" selection-end="479" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/includes/model/trainee.class.php">
+    <entry file="file://$PROJECT_DIR$/includes/act/index.class.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="71" column="15" selection-start="1913" selection-end="1913" vertical-scroll-proportion="-15.703704">
+        <state line="106" column="43" selection-start="3859" selection-end="3863" vertical-scroll-proportion="-8.965517">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="268" column="40" selection-start="12106" selection-end="12106" vertical-scroll-proportion="-2.2692308">
+        <state line="227" column="40" selection-start="9981" selection-end="9981" vertical-scroll-proportion="0.24809161">
           <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#td#0;n#tr#0;n#table#2;n#div#1;n#div#0;n#!!top" expanded="true" />
             <element signature="tag#div#0;tag#div#0;tag#div#0;tag#div#0;tag#td#0;tag#tr#0;tag#table#2;tag#div#1;tag#div#0" expanded="false" />
-            <element signature="n#style#0;n#div#1;n#div#2;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#3;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#4;n#div#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/includes/ctrl/ccontroller.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="33" column="20" selection-start="641" selection-end="641" vertical-scroll-proportion="0.3500931">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/includes/model/learnorganization.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="5" selection-start="155" selection-end="155" vertical-scroll-proportion="-3.4827585">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/includes/act/learnlogs.class.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="73" column="33" selection-start="1923" selection-end="1923" vertical-scroll-proportion="0.12948208">
+        <state line="50" column="14" selection-start="1299" selection-end="1299" vertical-scroll-proportion="0.76908755">
           <folding />
         </state>
       </provider>

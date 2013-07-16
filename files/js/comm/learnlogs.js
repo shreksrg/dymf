@@ -53,8 +53,6 @@ function getClassStatsForSum() {
     $.post(url, {'clscode': 'ws'}, function (rows) {
         for (var i in rows) {
             $('[cscode=' + rows[i]['cstatcode'] + '] input[citem=sc]').numberbox('setValue', rows[i]['sumcount']);
-
-
         }
     }, 'json')
 }

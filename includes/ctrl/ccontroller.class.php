@@ -36,4 +36,9 @@ class Ctrl_CController
         echo json_encode(array('err' => $errCode, 'content' => $message));
         die();
     }
+
+    public function getSession($id)
+    {
+        return $_SESSION[$id];
+    }
 }

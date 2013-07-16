@@ -59,17 +59,17 @@ class Act_LearnLogs extends Ctrl_Components_Controller
         //根据学号和法号获取学员id
         // $stuno = $_POST['stuno'];
         // $buddhist = $_POST['buddhist'];
-        $stuno = 's009s';
+        $stuno = 's009s-009';
         $buddhist = '研发及尼';
         $squadid = 1;
         $clsCode = 'ws';
         $model = new model_trainee();
-        $row = $model->findByAttribute('stuno=:stuno and buddhist=:buddhist', array('stuno' => $stuno, 'buddhist' => $buddhist));
+        $row = $model->findByAttribute('stuno=:stuno', array('stuno' => $stuno));
         if ($row) {
             $stuId = $row['id'];
         } else {
-            //增加学员
-            $data = array('stuno' => $stuno, 'buddhist' => $buddhist, 'squadid' => $squadid);
+            $pasword = sha1($stuno); //设置新密码
+            $data = array('username' => $stuno, 'password' => $pasword, 'stuno' => $stuno, 'buddhist' => $buddhist, 'squadid' => $squadid);
             $stuId = $model->addTrainee($data);
         }
 
@@ -79,7 +79,8 @@ class Act_LearnLogs extends Ctrl_Components_Controller
         //增加学修记录
         $modelOrg = new model_learnOrganization();
         $org = array('stuid' => $stuId, 'clscode' => $clsCode, 'squadid' => $squadid, 'learn_date' => $curMonth);
-        isset($_POST['stats']) ? $stats = $_POST['stats'] : $this->responseJsonMsg(1, '未知的统计项');
+
+        isset($_POST['stats']) ? $stats = $_POST['stats'] : $this->responseJsonMsg(1, 'unknown stat items');
         $result = $modelOrg->addLearnLogs($org, $stats);
         if ($result === true) {
             $errCode = 0;
@@ -89,7 +90,6 @@ class Act_LearnLogs extends Ctrl_Components_Controller
             $message = $result;
         }
         $this->responseJsonMsg($errCode, $message);
-
     }
 
 
